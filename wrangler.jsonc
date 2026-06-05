@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "nikshohrat",
+  "compatibility_date": "2026-06-05",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "create-a-premium-personal-portfolio-website"
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}
