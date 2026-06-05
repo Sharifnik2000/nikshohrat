@@ -1,13 +1,13 @@
 const categories = {
   "restaurant-menu": {
-    title: "Restaurant Menu Design",
+    title: "Menu Design",
     meta: "Category: Menus for restaurants and food venues",
-    image: "assets/restaurant-menu.png.jpg",
-    alt: "Premium restaurant menu design mockup on a warm tabletop",
+    image: "assets/menu-spaghetti-trifold.png",
+    alt: "Spaghetti trifold restaurant menu opened on a white tablecloth",
     overview: "A focused category for printed and digital menu systems across restaurants, cafes, bakeries, and specialty food venues.",
     focus: "Clear hierarchy, appetite-led sequencing, premium perception, and menu structures that help guests choose faster.",
     deliverables: "Menu architecture, print menu design, QR menu adaptation, section hierarchy, typography, production-ready files.",
-    tools: "Figma, Adobe Illustrator, Adobe Photoshop",
+    tools: "Adobe InDesign, Adobe Illustrator, Adobe Photoshop",
     samples: [
       {
         name: "Fine dining menu refresh",
@@ -24,17 +24,31 @@ const categories = {
         type: "Cafe",
         result: "Built a flexible layout for rotating drinks, brunch items, and daily specials."
       }
+    ],
+    finalVisuals: [
+      {
+        src: "assets/menu-cover.png",
+        alt: "Mulberry Street dessert cocktail menu held in a warm restaurant setting"
+      },
+      {
+        src: "assets/menu-cafe-whisper.png",
+        alt: "Whisper coffee menu opened inside a bright cafe interior"
+      },
+      {
+        src: "assets/menu-domano-spread.png",
+        alt: "Domano restaurant menu spread held open in a warm dining room"
+      }
     ]
   },
   "food-packaging": {
-    title: "Food Packaging Design",
+    title: "Packaging Design",
     meta: "Category: Packaging systems for food products",
-    image: "assets/food-packaging.png",
-    alt: "Premium food packaging system with boxes, jars, labels, and pouches",
+    image: "assets/packaging-magic-milk.png",
+    alt: "Magic Milk packaging design displayed on a retail shelf",
     overview: "Packaging concepts and systems for products that need to feel valuable, clear, and shelf-ready at first glance.",
     focus: "Shelf presence, product storytelling, scalable label logic, ingredient cues, and tactile brand expression.",
     deliverables: "Packaging concept, label system, box direction, color palette, typography, mockups, print-ready artwork guidance.",
-    tools: "Adobe Illustrator, Adobe Photoshop, Figma",
+    tools: "Adobe Illustrator, Adobe Photoshop, Adobe Acrobat",
     samples: [
       {
         name: "Gourmet jar label family",
@@ -51,37 +65,61 @@ const categories = {
         type: "Food brand",
         result: "Designed a modular box language that can extend across multiple SKUs."
       }
+    ],
+    finalVisuals: [
+      {
+        src: "assets/packaging-magic-milk.png",
+        alt: "Magic Milk packaging design displayed on a retail shelf"
+      },
+      {
+        src: "assets/packaging-chocolate-tin.png",
+        alt: "Premium Farmand chocolate packaging in a dark geometric tin"
+      },
+      {
+        src: "assets/packaging-cravo-chips.png",
+        alt: "Cravo sea salt and paprika potato chips packaging shown from the front and back"
+      }
     ]
   },
-  "cafe-identity": {
-    title: "Cafe Brand Identity",
-    meta: "Category: Identity systems for cafes",
-    image: "assets/cafe-identity.png",
-    alt: "Cafe brand identity mockup with cups, cards, bags, and stationery",
-    overview: "Identity systems that help cafes feel memorable across cups, signage, menus, packaging, and social touchpoints.",
-    focus: "Warmth, consistency, tactile details, local character, and a brand system that works in daily operations.",
-    deliverables: "Visual direction, logo direction, stationery, packaging touchpoints, color and type system, usage notes.",
-    tools: "Figma, Adobe Illustrator, Adobe Photoshop",
+  "label-design": {
+    title: "Label Design",
+    meta: "Category: Label systems for food and beverage brands",
+    image: "assets/label-design-bottles.png",
+    alt: "Nordlys kombucha label design across three bottle flavors",
+    overview: "Label systems designed to clarify product families, strengthen shelf presence, and make each flavor easy to recognize.",
+    focus: "Product hierarchy, variant logic, material character, regulatory clarity, and a premium first impression.",
+    deliverables: "Label direction, flavor variants, typography, color system, print artwork guidance, and presentation mockups.",
+    tools: "Adobe Illustrator, Adobe Photoshop, Figma",
     samples: [
       {
-        name: "Neighborhood coffee identity",
-        type: "Cafe",
-        result: "Built a warmer visual system for cups, cards, and counter signage."
+        name: "Kombucha label family",
+        type: "Beverage",
+        result: "Created a calm visual system that distinguishes flavors while keeping the range cohesive."
       },
       {
-        name: "Bakery cafe launch kit",
-        type: "Cafe bakery",
-        result: "Designed the first identity touchpoints for opening week and packaging."
+        name: "Gift box presentation",
+        type: "Retail set",
+        result: "Extended the label language into a premium boxed product experience."
       },
       {
-        name: "Espresso bar refresh",
-        type: "Coffee bar",
-        result: "Refined the look to feel more intentional without losing the casual tone."
+        name: "Shelf-ready variants",
+        type: "Product system",
+        result: "Built a flexible hierarchy for future flavors and packaging formats."
+      }
+    ],
+    finalVisuals: [
+      {
+        src: "assets/label-design-bottles.png",
+        alt: "Nordlys kombucha bottles with sage birch, pale amber, and wild raspberry labels"
+      },
+      {
+        src: "assets/label-design-gift-box.png",
+        alt: "Nordlys kombucha gift box with three labeled bottles"
       }
     ]
   },
   "digital-menu-ui": {
-    title: "Digital Menu UI",
+    title: "UI Design",
     meta: "Category: Digital menus and ordering interfaces",
     image: "assets/digital-menu-ui.png",
     alt: "Digital restaurant menu UI displayed on tablet and phone",
@@ -105,32 +143,38 @@ const categories = {
         type: "Food startup",
         result: "Structured the ordering path around repeat orders and quick decisions."
       }
+    ],
+    finalVisuals: [
+      {
+        src: "assets/ui-web-design.png",
+        alt: "Premium wine brand e-commerce website displayed on a desktop monitor"
+      }
     ]
   },
   "coffee-subscription": {
-    title: "Coffee Subscription App UI",
-    meta: "Category: Mobile UI for coffee brands",
+    title: "Social Media Design",
+    meta: "Category: Social content systems for food brands",
     image: "assets/coffee-subscription-app.png",
-    alt: "Coffee subscription mobile app UI with coffee bags and beans",
-    overview: "Mobile product experiences for coffee brands that need online buying to feel sensory, simple, and trustworthy.",
-    focus: "Product discovery, subscription cadence, flavor education, checkout confidence, and brand-led UI details.",
-    deliverables: "App UI concept, product cards, subscription flow, visual system, mobile mockups.",
-    tools: "Figma, Adobe Photoshop",
+    alt: "Social media design concept for a premium coffee brand",
+    overview: "Social media systems for restaurants and food brands that need consistent, appetising, and recognisable content.",
+    focus: "Campaign art direction, branded templates, launch content, product storytelling, and visual consistency across posts.",
+    deliverables: "Social templates, campaign concepts, post and story layouts, launch visuals, and editable content systems.",
+    tools: "Adobe Photoshop, Adobe Illustrator, Canva",
     samples: [
       {
-        name: "Bean selection flow",
-        type: "Coffee roaster",
-        result: "Made roast, flavor, and grind choices easier to compare."
+        name: "Product launch campaign",
+        type: "Food brand",
+        result: "Created a consistent visual direction for launch posts, stories, and product highlights."
       },
       {
-        name: "Subscription setup",
-        type: "Coffee brand",
-        result: "Designed a calmer cadence picker for recurring coffee deliveries."
+        name: "Restaurant content system",
+        type: "Restaurant",
+        result: "Built flexible templates for menu updates, offers, and seasonal campaigns."
       },
       {
-        name: "Coffee product cards",
-        type: "E-commerce",
-        result: "Created more sensory cards for tasting notes and product confidence."
+        name: "Branded story templates",
+        type: "Social content",
+        result: "Designed a reusable story system that keeps daily content on-brand."
       }
     ]
   },
@@ -224,6 +268,8 @@ const modalCategory = document.querySelector("#modalCategory");
 const modalOverview = document.querySelector("#modalOverview");
 const modalFocus = document.querySelector("#modalFocus");
 const modalSamples = document.querySelector("#modalSamples");
+const modalFinalVisualsPanel = document.querySelector("#modalFinalVisualsPanel");
+const modalFinalVisuals = document.querySelector("#modalFinalVisuals");
 const modalDeliverables = document.querySelector("#modalDeliverables");
 const modalTools = document.querySelector("#modalTools");
 const closeTriggers = document.querySelectorAll("[data-close-modal]");
@@ -232,19 +278,44 @@ let lastFocusedElement = null;
 
 const toolIconMeta = {
   Figma: {
-    className: "tool-figma",
     label: "Figma",
-    shortLabel: "F"
+    image: "assets/app-figma.png"
   },
   "Adobe Illustrator": {
-    className: "tool-ai",
     label: "Adobe Illustrator",
-    shortLabel: "Ai"
+    image: "assets/app-illustrator.png"
   },
   "Adobe Photoshop": {
-    className: "tool-ps",
     label: "Adobe Photoshop",
-    shortLabel: "Ps"
+    image: "assets/app-photoshop.png"
+  },
+  "Adobe InDesign": {
+    label: "Adobe InDesign",
+    image: "assets/app-indesign.png"
+  },
+  "Adobe Premiere Pro": {
+    label: "Adobe Premiere Pro",
+    image: "assets/app-premiere.png"
+  },
+  "Adobe Acrobat": {
+    label: "Adobe Acrobat",
+    image: "assets/app-acrobat.png"
+  },
+  Canva: {
+    label: "Canva",
+    image: "assets/app-canva.png"
+  },
+  ChatGPT: {
+    label: "ChatGPT",
+    image: "assets/app-chatgpt.png"
+  },
+  Claude: {
+    label: "Claude",
+    image: "assets/app-claude.png"
+  },
+  Midjourney: {
+    label: "Midjourney",
+    image: "assets/app-midjourney.png"
   }
 };
 
@@ -256,6 +327,7 @@ function updateLocalTime() {
     timeZone: "Europe/Copenhagen",
     hour: "2-digit",
     minute: "2-digit",
+    second: "2-digit",
     hour12: false
   }).format(new Date());
 
@@ -285,12 +357,54 @@ function renderTools(tools) {
       if (!icon) return "";
 
       return `
-        <span class="tool-icon ${icon.className}" role="img" aria-label="${icon.label}" title="${icon.label}">
-          ${icon.shortLabel}
+        <span class="tool-icon" role="img" aria-label="${icon.label}" title="${icon.label}">
+          <img src="${icon.image}" alt="">
         </span>
       `;
     })
     .join("");
+}
+
+function renderFinalVisuals(visuals = []) {
+  if (!visuals.length) {
+    modalFinalVisualsPanel.hidden = true;
+    modalFinalVisuals.innerHTML = "";
+    return;
+  }
+
+  modalFinalVisualsPanel.hidden = false;
+  modalFinalVisuals.innerHTML = visuals
+    .map(
+      (visual) => `
+        <button
+          class="final-visual-card"
+          type="button"
+          data-visual-src="${visual.src}"
+          data-visual-alt="${visual.alt}"
+          aria-label="View this project image larger"
+        >
+          <img src="${visual.src}" alt="${visual.alt}">
+        </button>
+      `
+    )
+    .join("");
+}
+
+function showVisualInMainView(visualButton) {
+  const visualSrc = visualButton.dataset.visualSrc;
+  const visualAlt = visualButton.dataset.visualAlt;
+  if (!visualSrc) return;
+
+  modalImage.src = visualSrc;
+  modalImage.alt = visualAlt || "";
+
+  modalFinalVisuals.querySelectorAll(".final-visual-card").forEach((button) => {
+    button.classList.toggle("is-active", button === visualButton);
+  });
+
+  if (window.matchMedia("(max-width: 820px)").matches) {
+    document.querySelector(".modal-visual").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 }
 
 function openModal(categoryKey) {
@@ -307,6 +421,7 @@ function openModal(categoryKey) {
   modalDeliverables.textContent = category.deliverables;
   renderTools(category.tools);
   renderSamples(category.samples);
+  renderFinalVisuals(category.finalVisuals);
 
   modal.classList.add("is-open");
   modal.setAttribute("aria-hidden", "false");
@@ -338,6 +453,11 @@ closeTriggers.forEach((trigger) => {
   trigger.addEventListener("click", closeModal);
 });
 
+modalFinalVisuals.addEventListener("click", (event) => {
+  const visualButton = event.target.closest(".final-visual-card");
+  if (visualButton) showVisualInMainView(visualButton);
+});
+
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && modal.classList.contains("is-open")) {
     closeModal();
@@ -360,4 +480,4 @@ if (cursor && window.matchMedia("(pointer: fine)").matches) {
 }
 
 updateLocalTime();
-setInterval(updateLocalTime, 30000);
+setInterval(updateLocalTime, 1000);

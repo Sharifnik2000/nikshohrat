@@ -1,3 +1,67 @@
+@font-face {
+  font-family: "Eloquia Text";
+  src: url("assets/fonts/EloquiaText-Regular.otf") format("opentype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Eloquia Text";
+  src: url("assets/fonts/EloquiaText-Medium.otf") format("opentype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Eloquia Text";
+  src: url("assets/fonts/EloquiaText-Bold.otf") format("opentype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Eloquia Display";
+  src: url("assets/fonts/EloquiaDisplay-Regular.otf") format("opentype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Eloquia Display";
+  src: url("assets/fonts/EloquiaDisplay-Bold.otf") format("opentype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Eloquia Display";
+  src: url("assets/fonts/EloquiaDisplay-Black.otf") format("opentype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "EMT Approach Mono";
+  src: url("assets/fonts/ApproachMono-Regular.otf") format("opentype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "EMT Approach Mono";
+  src: url("assets/fonts/ApproachMono-SemiBold.otf") format("opentype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}
+
 :root {
   --paper: #f5efe4;
   --paper-deep: #ebe0d1;
@@ -12,8 +76,9 @@
   --charcoal: #24231f;
   --shadow: 0 20px 60px rgba(42, 32, 22, 0.12);
   --radius: 8px;
-  --sans: "Avenir Next", "Inter", "Neue Haas Grotesk Text", "Helvetica Neue", Arial, sans-serif;
-  --serif: "Iowan Old Style", "Cormorant Garamond", "Georgia", "Times New Roman", serif;
+  --body: "Eloquia Text", "Avenir Next", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --display: "Eloquia Display", "Eloquia Text", "Avenir Next", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --label: "EMT Approach Mono", "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
 }
 
 * {
@@ -31,7 +96,7 @@ body {
     var(--paper);
   background-size: 84px 84px;
   color: var(--ink);
-  font-family: var(--sans);
+  font-family: var(--body);
   letter-spacing: 0;
 }
 
@@ -47,6 +112,13 @@ a {
 img {
   display: block;
   max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+.brand-mark {
+  font-family: var(--display);
 }
 
 .cursor-dot {
@@ -98,6 +170,7 @@ img {
   justify-content: flex-end;
   gap: clamp(10px, 1.8vw, 22px);
   color: var(--muted);
+  font-family: var(--label);
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
@@ -190,9 +263,10 @@ main {
   border-radius: 999px;
   background: var(--ink);
   color: var(--cream);
+  font-family: var(--label);
   font-size: 13px;
   font-weight: 800;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
   transition: transform 220ms ease, background-color 220ms ease, color 220ms ease;
 }
 
@@ -227,6 +301,7 @@ main {
 .eyebrow {
   margin: 0;
   color: var(--orange);
+  font-family: var(--label);
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.16em;
@@ -236,6 +311,7 @@ main {
 .intro-overlay h1 {
   max-width: 10ch;
   margin: 0;
+  font-family: var(--display);
   font-size: clamp(40px, 5.1vw, 62px);
   line-height: 0.92;
   letter-spacing: 0;
@@ -260,6 +336,15 @@ main {
   line-height: 1.55;
 }
 
+.intro-overlay .intro-copy {
+  color: rgba(255, 250, 240, 0.64);
+}
+
+.intro-emphasis {
+  color: rgba(255, 250, 240, 0.98);
+  font-weight: 700;
+}
+
 .intro-reviews {
   display: grid;
   gap: 12px;
@@ -275,6 +360,7 @@ main {
 .intro-overlay .review-label {
   max-width: none;
   color: rgba(255, 250, 240, 0.52);
+  font-family: var(--label);
   font-size: 11px;
   font-weight: 900;
   letter-spacing: 0.14em;
@@ -288,6 +374,7 @@ main {
   gap: 10px;
   min-width: 0;
   color: rgba(255, 250, 240, 0.9);
+  font-family: var(--label);
 }
 
 .avatar-stack {
@@ -316,6 +403,7 @@ main {
 
 .review-score strong {
   color: var(--cream);
+  font-family: var(--display);
   font-size: clamp(21px, 2vw, 28px);
   line-height: 1;
 }
@@ -389,6 +477,7 @@ main {
 
 .review-note span {
   color: rgba(255, 250, 240, 0.56);
+  font-family: var(--label);
   font-size: 10px;
   font-weight: 900;
   letter-spacing: 0.08em;
@@ -435,7 +524,7 @@ main {
 .portfolio-kicker p {
   max-width: 840px;
   margin: 0;
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: clamp(42px, 5.4vw, 86px);
   font-weight: 700;
   line-height: 0.96;
@@ -444,6 +533,7 @@ main {
 
 .portfolio-kicker span {
   color: var(--muted);
+  font-family: var(--label);
   font-size: 14px;
   line-height: 1.55;
 }
@@ -529,6 +619,7 @@ main {
   background: rgba(255, 250, 240, 0.12);
   backdrop-filter: blur(12px);
   color: rgba(255, 250, 240, 0.92);
+  font-family: var(--label);
   font-size: 12px;
   font-weight: 900;
   letter-spacing: 0.1em;
@@ -587,49 +678,138 @@ main {
   letter-spacing: 0;
 }
 
-.service-grid {
+.capabilities-section .section-heading {
+  grid-template-columns: 1fr;
+}
+
+.capabilities-section .section-heading h2 {
+  justify-self: stretch;
+  text-align: left;
+}
+
+.capabilities-row {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(5, minmax(150px, 1fr));
+  overflow-x: auto;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  scrollbar-width: none;
 }
 
-.service-card {
+.capabilities-row::-webkit-scrollbar {
+  display: none;
+}
+
+.capability-item {
+  display: grid;
+  min-height: 150px;
+  align-content: start;
+  gap: 12px;
   margin: 0;
-  border: 1px solid rgba(20, 18, 15, 0.1);
-  border-radius: var(--radius);
-  background: rgba(255, 250, 240, 0.58);
-  box-shadow: 0 12px 34px rgba(43, 33, 23, 0.07);
+  padding: 20px;
+  border-right: 1px solid var(--line);
 }
 
-.service-card {
-  min-height: 250px;
-  padding: 22px;
+.capability-item:first-child {
+  border-left: 1px solid var(--line);
 }
 
-.service-card span,
-.process-list span,
-.case-details span {
+.capability-item span {
+  min-height: 1em;
   color: var(--olive);
+  font-family: var(--label);
   font-size: 11px;
   font-weight: 900;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
 }
 
-.service-card h3 {
+.capability-item h3 {
   max-width: 13ch;
-  margin: 74px 0 14px;
-  font-size: clamp(22px, 2vw, 30px);
+  margin: 0;
+  font-size: clamp(20px, 1.7vw, 28px);
   line-height: 1;
   letter-spacing: 0;
 }
 
-.service-card p,
-.process-list p {
+.tools-showcase {
+  display: grid;
+  max-width: 1540px;
+  gap: 28px;
+  margin: clamp(74px, 9vw, 120px) auto 0;
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.tools-showcase > .eyebrow {
+  text-align: left;
+}
+
+.tools-marquee {
+  width: min(900px, 100%);
+  margin: 0 auto;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+
+.tools-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: clamp(26px, 4vw, 58px);
+  padding: 4px clamp(13px, 2vw, 29px);
+  animation: toolsMarquee 22s linear infinite;
+  will-change: transform;
+}
+
+.tools-showcase:hover .tools-track {
+  animation-play-state: paused;
+}
+
+.app-icon {
+  width: clamp(66px, 6vw, 88px);
+  height: clamp(66px, 6vw, 88px);
+  flex: 0 0 auto;
   margin: 0;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.55;
+  filter: saturate(0.82);
+}
+
+.app-icon img {
+  width: 100%;
+  height: 100%;
+  border-radius: 22%;
+  object-fit: cover;
+  box-shadow: 0 12px 28px rgba(43, 33, 23, 0.1);
+}
+
+@keyframes toolsMarquee {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.process-section .section-heading {
+  grid-template-columns: 1fr;
+}
+
+.process-section .section-heading h2 {
+  justify-self: stretch;
+  text-align: left;
+}
+
+.process-list span,
+.case-details span {
+  color: var(--olive);
+  font-family: var(--label);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .process-list {
@@ -645,7 +825,7 @@ main {
   display: grid;
   min-height: 220px;
   align-content: start;
-  gap: 22px;
+  gap: 14px;
   padding: 22px;
   border-top: 2px solid var(--ink);
   background: linear-gradient(180deg, rgba(255, 250, 240, 0.62), rgba(255, 250, 240, 0.18));
@@ -655,9 +835,9 @@ main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  margin-top: 42px;
+  width: 54px;
+  height: 54px;
+  margin-top: 4px;
   border: 1px solid rgba(20, 18, 15, 0.12);
   border-radius: var(--radius);
   background: rgba(255, 250, 240, 0.56);
@@ -665,8 +845,8 @@ main {
 }
 
 .process-icon svg {
-  width: 25px;
-  height: 25px;
+  width: 28px;
+  height: 28px;
   fill: none;
   stroke: currentColor;
   stroke-linecap: round;
@@ -676,7 +856,7 @@ main {
 
 .process-list p {
   max-width: 15ch;
-  margin-top: 0;
+  margin: 0;
   color: var(--ink);
   font-size: clamp(21px, 2vw, 28px);
   font-weight: 800;
@@ -702,11 +882,15 @@ main {
 .final-cta h2 {
   max-width: 950px;
   margin: 0;
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: clamp(44px, 7.2vw, 108px);
   font-weight: 700;
   line-height: 0.94;
   letter-spacing: 0;
+}
+
+.final-cta h2 span {
+  display: block;
 }
 
 .case-modal {
@@ -731,7 +915,7 @@ main {
 
 .modal-panel {
   position: relative;
-  width: min(1180px, 100%);
+  width: min(1380px, 100%);
   max-height: calc(100vh - 40px);
   overflow: auto;
   border: 1px solid rgba(255, 250, 240, 0.16);
@@ -753,7 +937,7 @@ main {
   background: rgba(255, 250, 240, 0.82);
   color: var(--ink);
   cursor: pointer;
-  font: inherit;
+  font-family: var(--label);
   font-size: 12px;
   font-weight: 900;
   text-transform: uppercase;
@@ -761,7 +945,7 @@ main {
 
 .modal-layout {
   display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
+  grid-template-columns: 1.15fr 0.85fr;
   gap: clamp(22px, 4vw, 48px);
   padding: clamp(18px, 4vw, 48px);
 }
@@ -770,7 +954,7 @@ main {
   position: sticky;
   top: 48px;
   overflow: hidden;
-  height: min(70vh, 720px);
+  height: min(78vh, 840px);
   border-radius: var(--radius);
   background: var(--charcoal);
 }
@@ -778,7 +962,7 @@ main {
 .modal-visual img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .modal-content {
@@ -788,6 +972,7 @@ main {
 .modal-content h2 {
   max-width: 11ch;
   margin: 12px 0 30px;
+  font-family: var(--display);
   font-size: clamp(42px, 6vw, 82px);
   line-height: 0.92;
   letter-spacing: 0;
@@ -822,38 +1007,19 @@ main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 52px;
+  height: 52px;
+  overflow: hidden;
+  border: 1px solid rgba(20, 18, 15, 0.1);
   border-radius: var(--radius);
-  font-size: 13px;
-  font-weight: 900;
-  line-height: 1;
-  letter-spacing: 0;
+  background: rgba(255, 250, 240, 0.7);
   box-shadow: 0 12px 24px rgba(43, 33, 23, 0.08);
 }
 
-.tool-figma {
-  border: 1px solid rgba(16, 14, 12, 0.14);
-  background:
-    radial-gradient(circle at 38% 30%, #f24e1e 0 16%, transparent 17%),
-    radial-gradient(circle at 62% 30%, #ff7262 0 16%, transparent 17%),
-    radial-gradient(circle at 38% 50%, #a259ff 0 16%, transparent 17%),
-    radial-gradient(circle at 62% 50%, #1abcfe 0 16%, transparent 17%),
-    radial-gradient(circle at 38% 70%, #0acf83 0 16%, transparent 17%),
-    #fffaf0;
-  color: transparent;
-}
-
-.tool-ai {
-  border: 1px solid rgba(255, 154, 24, 0.38);
-  background: #2c1a05;
-  color: #ff9a18;
-}
-
-.tool-ps {
-  border: 1px solid rgba(49, 168, 255, 0.38);
-  background: #071a2c;
-  color: #31a8ff;
+.tool-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .sample-grid {
@@ -887,6 +1053,61 @@ main {
   line-height: 1.45;
 }
 
+.final-visuals-panel[hidden] {
+  display: none;
+}
+
+.final-visual-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.final-visual-card {
+  position: relative;
+  min-height: 260px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(20, 18, 15, 0.1);
+  border-radius: var(--radius);
+  background: var(--charcoal);
+  box-shadow: 0 14px 32px rgba(43, 33, 23, 0.09);
+  cursor: zoom-in;
+  appearance: none;
+  transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+}
+
+.final-visual-card:first-child {
+  grid-column: 1 / -1;
+  min-height: 330px;
+}
+
+.final-visual-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms ease;
+}
+
+.final-visual-card:hover,
+.final-visual-card:focus-visible,
+.final-visual-card.is-active {
+  border-color: rgba(20, 18, 15, 0.48);
+  box-shadow: 0 18px 38px rgba(43, 33, 23, 0.16);
+  transform: translateY(-2px);
+}
+
+.final-visual-card:focus-visible {
+  outline: 2px solid rgba(20, 18, 15, 0.34);
+  outline-offset: 3px;
+}
+
+.final-visual-card:hover img {
+  transform: scale(1.035);
+}
+
 @media (max-width: 1180px) {
   .hero-shell {
     grid-template-columns: 1fr;
@@ -908,7 +1129,6 @@ main {
     align-items: start;
   }
 
-  .service-grid,
   .process-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -980,23 +1200,38 @@ main {
   }
 
   .section-heading,
-  .service-grid,
   .process-list,
   .modal-layout {
     grid-template-columns: 1fr;
   }
 
-  .service-card,
+  .capabilities-row {
+    grid-template-columns: repeat(5, minmax(180px, 1fr));
+    margin-inline: -14px;
+    padding-inline: 14px;
+    scroll-snap-type: x proximity;
+  }
+
+  .capability-item {
+    min-height: 145px;
+    scroll-snap-align: start;
+  }
+
+  .tools-showcase {
+    gap: 22px;
+  }
+
   .process-list li {
     min-height: 190px;
   }
 
-  .service-card h3 {
-    margin-top: 48px;
+  .process-section .section-heading h2 {
+    justify-self: stretch;
+    text-align: left;
   }
 
   .process-icon {
-    margin-top: 34px;
+    margin-top: 4px;
   }
 
   .modal-panel {
@@ -1010,7 +1245,8 @@ main {
   .modal-visual {
     position: relative;
     top: auto;
-    height: 46vh;
+    height: min(68svh, 640px);
+    min-height: 420px;
   }
 
   .modal-content {
@@ -1019,6 +1255,15 @@ main {
 
   .sample-grid {
     grid-template-columns: 1fr;
+  }
+
+  .final-visual-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .final-visual-card,
+  .final-visual-card:first-child {
+    min-height: 260px;
   }
 }
 
