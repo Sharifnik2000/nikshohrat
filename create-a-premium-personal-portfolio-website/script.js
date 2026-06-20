@@ -5,6 +5,7 @@ const categories = {
     image: "assets/menu-spaghetti-trifold.png",
     alt: "Spaghetti trifold restaurant menu opened on a white tablecloth",
     overview: "A focused category for printed and digital menu systems across restaurants, cafes, bakeries, and specialty food venues.",
+    result: "Menu system designed for clarity, appetite, and a more premium ordering moment.",
     focus: "Clear hierarchy, appetite-led sequencing, premium perception, and menu structures that help guests choose faster.",
     deliverables: "Menu architecture, print menu design, QR menu adaptation, section hierarchy, typography, production-ready files.",
     tools: "Adobe InDesign, Adobe Illustrator, Adobe Photoshop",
@@ -31,6 +32,10 @@ const categories = {
         alt: "Mulberry Street dessert cocktail menu held in a warm restaurant setting"
       },
       {
+        src: "assets/menu-late-night-happy-hour.png",
+        alt: "Mulberry Street late night happy hour menu mockup in a warm bar setting"
+      },
+      {
         src: "assets/menu-cafe-whisper.png",
         alt: "Whisper coffee menu opened inside a bright cafe interior"
       },
@@ -46,6 +51,7 @@ const categories = {
     image: "assets/packaging-magic-milk.png",
     alt: "Magic Milk packaging design displayed on a retail shelf",
     overview: "Packaging concepts and systems for products that need to feel valuable, clear, and shelf-ready at first glance.",
+    result: "Packaging direction built to make products feel more valuable at first glance.",
     focus: "Shelf presence, product storytelling, scalable label logic, ingredient cues, and tactile brand expression.",
     deliverables: "Packaging concept, label system, box direction, color palette, typography, mockups, print-ready artwork guidance.",
     tools: "Adobe Illustrator, Adobe Photoshop, Adobe Acrobat",
@@ -87,6 +93,7 @@ const categories = {
     image: "assets/label-design-bottles.png",
     alt: "Nordlys kombucha label design across three bottle flavors",
     overview: "Label systems designed to clarify product families, strengthen shelf presence, and make each flavor easy to recognize.",
+    result: "Label system created for stronger flavor recognition and a calmer shelf presence.",
     focus: "Product hierarchy, variant logic, material character, regulatory clarity, and a premium first impression.",
     deliverables: "Label direction, flavor variants, typography, color system, print artwork guidance, and presentation mockups.",
     tools: "Adobe Illustrator, Adobe Photoshop, Figma",
@@ -124,6 +131,7 @@ const categories = {
     image: "assets/digital-menu-ui.png",
     alt: "Digital restaurant menu UI displayed on tablet and phone",
     overview: "Digital menu experiences for restaurants that need guests to browse, understand, and order with less friction.",
+    result: "Digital menu interface shaped to make browsing and ordering feel smoother.",
     focus: "Appetite-first layouts, category clarity, dish cards, ordering flow, and responsive menu behavior.",
     deliverables: "Mobile UI screens, tablet menu concept, category system, dish cards, interaction states.",
     tools: "Figma, Adobe Photoshop",
@@ -154,9 +162,10 @@ const categories = {
   "coffee-subscription": {
     title: "Social Media Design",
     meta: "Category: Social content systems for food brands",
-    image: "assets/coffee-subscription-app.png",
-    alt: "Social media design concept for a premium coffee brand",
+    image: "assets/social-media-profile-grid.png",
+    alt: "Nordgloed gelato social media profile grid displayed on a phone",
     overview: "Social media systems for restaurants and food brands that need consistent, appetising, and recognisable content.",
+    result: "Social content system designed to make food moments feel consistent and campaign-ready.",
     focus: "Campaign art direction, branded templates, launch content, product storytelling, and visual consistency across posts.",
     deliverables: "Social templates, campaign concepts, post and story layouts, launch visuals, and editable content systems.",
     tools: "Adobe Photoshop, Adobe Illustrator, Canva",
@@ -176,68 +185,67 @@ const categories = {
         type: "Social content",
         result: "Designed a reusable story system that keeps daily content on-brand."
       }
-    ]
-  },
-  "bakery-packaging": {
-    title: "Bakery Packaging",
-    meta: "Category: Packaging for bakeries and pastry brands",
-    image: "assets/bakery-packaging.png",
-    alt: "Elegant bakery packaging with pastry boxes, bread sleeves, and baked goods",
-    overview: "Packaging directions for bakeries that want everyday purchases to feel cared for, crafted, and giftable.",
-    focus: "Warm material choices, simple labels, box and sleeve systems, and touchpoints that feel handmade but premium.",
-    deliverables: "Packaging concept, box and sleeve direction, label system, paper recommendations, mockups.",
-    tools: "Adobe Illustrator, Adobe Photoshop",
-    samples: [
+    ],
+    finalVisuals: [
       {
-        name: "Pastry box system",
-        type: "Bakery",
-        result: "Created a cleaner box language for gifting and takeaway."
+        src: "assets/social-media-story-chocolate.png",
+        alt: "Nordgloed gelato Instagram story design with chocolate gelato"
       },
       {
-        name: "Bread sleeve concept",
-        type: "Artisan bakery",
-        result: "Designed a repeatable sleeve system for daily bread varieties."
+        src: "assets/social-media-feed-post.png",
+        alt: "Nordgloed gelato Instagram feed post mockup on a phone"
       },
       {
-        name: "Cookie label family",
-        type: "Dessert brand",
-        result: "Made small-batch packaging feel more polished and collectible."
+        src: "assets/social-media-story-set.png",
+        alt: "Set of three Nordgloed gelato Instagram story designs on phones"
+      },
+      {
+        src: "assets/social-media-profile-grid.png",
+        alt: "Nordgloed gelato Instagram profile grid and post system"
       }
     ]
   },
   "restaurant-landing": {
-    title: "Restaurant Landing Page",
-    meta: "Category: Web presence for restaurants",
-    image: "assets/restaurant-landing-page.png",
-    alt: "Restaurant landing page UI displayed on a laptop in warm dining light",
-    overview: "Landing pages and web concepts for restaurants that need atmosphere, menu style, and reservations to connect quickly.",
-    focus: "Cinematic first impression, clear booking actions, food-first art direction, and responsive page structure.",
-    deliverables: "Landing page concept, responsive sections, UI direction, image treatment, booking CTA system.",
-    tools: "Figma, Adobe Photoshop",
+    title: "Digital Menu & TV",
+    meta: "Category: Digital menu boards and in-store screens",
+    image: "assets/digital-menu-tv-board.png",
+    alt: "Digital restaurant menu boards displayed above a counter",
+    overview: "Digital menu board systems for restaurants that need clear ordering moments, strong product appetite, and fast in-store decisions.",
+    result: "In-store menu boards designed for quick scanning, stronger appetite, and clearer choices.",
+    focus: "Large-screen hierarchy, category structure, price clarity, product photography, and readable layouts for busy counters.",
+    deliverables: "TV menu board design, category layouts, food image direction, digital signage assets, and screen-ready export files.",
+    tools: "Figma, Adobe Photoshop, Adobe Illustrator",
     samples: [
       {
-        name: "Reservation landing page",
+        name: "Fast-service TV board",
         type: "Restaurant",
-        result: "Directed the page around atmosphere, booking, and signature dishes."
+        result: "Designed menu panels that make combos, sides, and drinks easier to scan."
       },
       {
-        name: "Opening campaign page",
-        type: "New venue",
-        result: "Created a concise launch page with a stronger first impression."
+        name: "Counter menu system",
+        type: "Food venue",
+        result: "Balanced product photography with readable pricing for quick ordering."
       },
       {
-        name: "Chef-led web concept",
-        type: "Dining concept",
-        result: "Built an editorial structure around story, menu, and reservation intent."
+        name: "In-store screen layout",
+        type: "Digital signage",
+        result: "Created a modular screen structure that can expand across multiple displays."
+      }
+    ],
+    finalVisuals: [
+      {
+        src: "assets/digital-menu-tv-board.png",
+        alt: "Nordkylling digital TV menu board system across three screens"
       }
     ]
   },
   "beverage-label": {
     title: "Beverage Label Design",
     meta: "Category: Labels for beverage brands",
-    image: "assets/beverage-label.png",
-    alt: "Premium beverage label mockup with bottles and cans on a warm counter",
+    image: "assets/beverage-nordskal-campaign.png",
+    alt: "Nordskal canned cocktail campaign with three cans and fresh ingredients",
     overview: "Label systems for beverage brands that need stronger flavor recognition, shelf confidence, and premium recall.",
+    result: "Beverage label system built for flavor clarity, premium recall, and stronger shelf confidence.",
     focus: "Flavor architecture, can and bottle hierarchy, color cues, material finish, and a flexible system across variants.",
     deliverables: "Label design system, flavor variation structure, bottle and can mockups, print artwork guidance.",
     tools: "Adobe Illustrator, Adobe Photoshop, Figma",
@@ -257,24 +265,61 @@ const categories = {
         type: "Wellness beverage",
         result: "Balanced natural cues with a calmer premium shelf presence."
       }
+    ],
+    finalVisuals: [
+      {
+        src: "assets/beverage-nordskal-campaign.png",
+        alt: "Nordskal canned cocktail campaign with three cans and fresh ingredients"
+      },
+      {
+        src: "assets/beverage-nordskal-bus-shelter.png",
+        alt: "Nordskal beverage poster displayed on a city bus shelter"
+      },
+      {
+        src: "assets/beverage-nordskal-can-lineup.png",
+        alt: "Nordskal beverage label system across eight colorful cans"
+      }
     ]
   }
 };
 
 const modal = document.querySelector("#caseModal");
+const modalVisualButton = document.querySelector("#modalVisualButton");
 const modalImage = document.querySelector("#modalImage");
+const modalThumbnails = document.querySelector("#modalThumbnails");
 const modalTitle = document.querySelector("#modalTitle");
 const modalCategory = document.querySelector("#modalCategory");
-const modalOverview = document.querySelector("#modalOverview");
+const modalResult = document.querySelector("#modalResult");
 const modalFocus = document.querySelector("#modalFocus");
-const modalSamples = document.querySelector("#modalSamples");
-const modalFinalVisualsPanel = document.querySelector("#modalFinalVisualsPanel");
-const modalFinalVisuals = document.querySelector("#modalFinalVisuals");
 const modalDeliverables = document.querySelector("#modalDeliverables");
 const modalTools = document.querySelector("#modalTools");
+const modalPrevProject = document.querySelector("#modalPrevProject");
+const modalNextProject = document.querySelector("#modalNextProject");
+const modalPrevTitle = document.querySelector("#modalPrevTitle");
+const modalNextTitle = document.querySelector("#modalNextTitle");
 const closeTriggers = document.querySelectorAll("[data-close-modal]");
 const focusableCards = document.querySelectorAll(".project-card");
+const projectOrder = Array.from(focusableCards)
+  .map((card) => card.dataset.project)
+  .filter((projectKey) => categories[projectKey]);
+
+const lightbox = document.querySelector("#imageLightbox");
+const lightboxImage = document.querySelector("#lightboxImage");
+const lightboxCaption = document.querySelector("#lightboxCaption");
+const lightboxClose = document.querySelector("#lightboxClose");
+const lightboxPrev = document.querySelector("#lightboxPrev");
+const lightboxNext = document.querySelector("#lightboxNext");
+const lightboxZoomOut = document.querySelector("#lightboxZoomOut");
+const lightboxZoomIn = document.querySelector("#lightboxZoomIn");
+const lightboxZoomLabel = document.querySelector("#lightboxZoomLabel");
+const lightboxCloseTriggers = document.querySelectorAll("[data-close-lightbox]");
+const zoomLevels = [1, 1.35, 1.75, 2.25];
+
 let lastFocusedElement = null;
+let currentProjectKey = null;
+let currentGallery = [];
+let currentImageIndex = 0;
+let lightboxZoomIndex = 0;
 
 const toolIconMeta = {
   Figma: {
@@ -334,20 +379,6 @@ function updateLocalTime() {
   timeElement.textContent = `DK ${time}`;
 }
 
-function renderSamples(samples) {
-  modalSamples.innerHTML = samples
-    .map(
-      (sample) => `
-        <article class="sample-card">
-          <span>${sample.type}</span>
-          <h3>${sample.name}</h3>
-          <p>${sample.result}</p>
-        </article>
-      `
-    )
-    .join("");
-}
-
 function renderTools(tools) {
   const toolList = tools.split(",").map((tool) => tool.trim());
 
@@ -365,45 +396,109 @@ function renderTools(tools) {
     .join("");
 }
 
-function renderFinalVisuals(visuals = []) {
-  if (!visuals.length) {
-    modalFinalVisualsPanel.hidden = true;
-    modalFinalVisuals.innerHTML = "";
-    return;
-  }
+function buildGallery(category) {
+  const visuals = [
+    {
+      src: category.image,
+      alt: category.alt
+    },
+    ...(category.finalVisuals || [])
+  ];
+  const seen = new Set();
 
-  modalFinalVisualsPanel.hidden = false;
-  modalFinalVisuals.innerHTML = visuals
+  return visuals.filter((visual) => {
+    if (!visual.src || seen.has(visual.src)) return false;
+    seen.add(visual.src);
+    return true;
+  });
+}
+
+function updateThumbnailState() {
+  modalThumbnails.querySelectorAll(".thumbnail-card").forEach((button, index) => {
+    const isActive = index === currentImageIndex;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-current", isActive ? "true" : "false");
+  });
+}
+
+function setActiveImage(index, shouldScrollThumbnail = false) {
+  if (!currentGallery.length) return;
+
+  const imageIndex = (index + currentGallery.length) % currentGallery.length;
+  const visual = currentGallery[imageIndex];
+  currentImageIndex = imageIndex;
+
+  modalImage.src = visual.src;
+  modalImage.alt = visual.alt || "";
+  modalVisualButton.style.setProperty("--modal-preview-image", `url("${visual.src}")`);
+  modalVisualButton.setAttribute("aria-label", `Open image ${imageIndex + 1} fullscreen`);
+  updateThumbnailState();
+
+  if (shouldScrollThumbnail) {
+    modalThumbnails
+      .querySelector(".thumbnail-card.is-active")
+      ?.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+  }
+}
+
+function renderThumbnails() {
+  modalThumbnails.innerHTML = currentGallery
     .map(
-      (visual) => `
+      (visual, index) => `
         <button
-          class="final-visual-card"
+          class="thumbnail-card"
           type="button"
-          data-visual-src="${visual.src}"
-          data-visual-alt="${visual.alt}"
-          aria-label="View this project image larger"
+          data-gallery-index="${index}"
+          aria-label="Show image ${index + 1} of ${currentGallery.length}"
+          aria-current="${index === currentImageIndex ? "true" : "false"}"
         >
-          <img src="${visual.src}" alt="${visual.alt}">
+          <img src="${visual.src}" alt="">
         </button>
       `
     )
     .join("");
+
+  updateThumbnailState();
 }
 
-function showVisualInMainView(visualButton) {
-  const visualSrc = visualButton.dataset.visualSrc;
-  const visualAlt = visualButton.dataset.visualAlt;
-  if (!visualSrc) return;
+function getAdjacentProject(direction) {
+  const currentIndex = projectOrder.indexOf(currentProjectKey);
+  const nextIndex = (currentIndex + direction + projectOrder.length) % projectOrder.length;
+  return projectOrder[nextIndex];
+}
 
-  modalImage.src = visualSrc;
-  modalImage.alt = visualAlt || "";
+function updateProjectNavigation() {
+  const previousKey = getAdjacentProject(-1);
+  const nextKey = getAdjacentProject(1);
+  modalPrevTitle.textContent = categories[previousKey].title;
+  modalNextTitle.textContent = categories[nextKey].title;
+}
 
-  modalFinalVisuals.querySelectorAll(".final-visual-card").forEach((button) => {
-    button.classList.toggle("is-active", button === visualButton);
-  });
+function updateModalContent(categoryKey) {
+  const category = categories[categoryKey];
+  if (!category) return;
+
+  currentProjectKey = categoryKey;
+  currentGallery = buildGallery(category);
+  currentImageIndex = 0;
+
+  modalTitle.textContent = category.title;
+  modalCategory.textContent = category.meta;
+  modalResult.textContent = category.result || category.overview;
+  modalFocus.textContent = category.focus;
+  modalDeliverables.textContent = category.deliverables;
+  renderTools(category.tools);
+  renderThumbnails();
+  setActiveImage(0);
+  updateProjectNavigation();
+}
+
+function switchProject(categoryKey) {
+  updateModalContent(categoryKey);
+  document.querySelector(".modal-panel").scrollTo({ top: 0, behavior: "smooth" });
 
   if (window.matchMedia("(max-width: 820px)").matches) {
-    document.querySelector(".modal-visual").scrollIntoView({ behavior: "smooth", block: "start" });
+    document.querySelector(".modal-gallery").scrollIntoView({ behavior: "smooth", block: "start" });
   }
 }
 
@@ -412,16 +507,7 @@ function openModal(categoryKey) {
   if (!category) return;
 
   lastFocusedElement = document.activeElement;
-  modalImage.src = category.image;
-  modalImage.alt = category.alt;
-  modalTitle.textContent = category.title;
-  modalCategory.textContent = category.meta;
-  modalOverview.textContent = category.overview;
-  modalFocus.textContent = category.focus;
-  modalDeliverables.textContent = category.deliverables;
-  renderTools(category.tools);
-  renderSamples(category.samples);
-  renderFinalVisuals(category.finalVisuals);
+  updateModalContent(categoryKey);
 
   modal.classList.add("is-open");
   modal.setAttribute("aria-hidden", "false");
@@ -430,12 +516,63 @@ function openModal(categoryKey) {
 }
 
 function closeModal() {
+  closeLightbox(false);
   modal.classList.remove("is-open");
   modal.setAttribute("aria-hidden", "true");
   document.body.classList.remove("modal-open");
 
   if (lastFocusedElement) {
     lastFocusedElement.focus();
+  }
+}
+
+function isLightboxOpen() {
+  return lightbox.classList.contains("is-open");
+}
+
+function setLightboxZoom(index) {
+  lightboxZoomIndex = Math.max(0, Math.min(index, zoomLevels.length - 1));
+  const zoom = zoomLevels[lightboxZoomIndex];
+  lightboxImage.style.setProperty("--lightbox-scale", zoom);
+  lightboxImage.classList.toggle("is-zoomed", zoom > 1);
+  lightboxZoomLabel.textContent = `${Math.round(zoom * 100)}%`;
+}
+
+function resetLightboxZoom() {
+  setLightboxZoom(0);
+}
+
+function setLightboxImage(index) {
+  if (!currentGallery.length) return;
+
+  setActiveImage(index, true);
+  const visual = currentGallery[currentImageIndex];
+  lightboxImage.src = visual.src;
+  lightboxImage.alt = visual.alt || "";
+  lightboxCaption.textContent = `${currentImageIndex + 1} / ${currentGallery.length}`;
+  resetLightboxZoom();
+}
+
+function openLightbox(index = currentImageIndex) {
+  if (!currentGallery.length) return;
+
+  setLightboxImage(index);
+  lightbox.classList.add("is-open");
+  lightbox.setAttribute("aria-hidden", "false");
+  document.body.classList.add("lightbox-open");
+  lightboxClose.focus();
+}
+
+function closeLightbox(shouldReturnFocus = true) {
+  if (!isLightboxOpen()) return;
+
+  lightbox.classList.remove("is-open");
+  lightbox.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("lightbox-open");
+  resetLightboxZoom();
+
+  if (shouldReturnFocus) {
+    modalVisualButton.focus();
   }
 }
 
@@ -453,12 +590,40 @@ closeTriggers.forEach((trigger) => {
   trigger.addEventListener("click", closeModal);
 });
 
-modalFinalVisuals.addEventListener("click", (event) => {
-  const visualButton = event.target.closest(".final-visual-card");
-  if (visualButton) showVisualInMainView(visualButton);
+modalThumbnails.addEventListener("click", (event) => {
+  const thumbnail = event.target.closest(".thumbnail-card");
+  if (!thumbnail) return;
+
+  setActiveImage(Number(thumbnail.dataset.galleryIndex), true);
+});
+
+modalVisualButton.addEventListener("click", () => openLightbox(currentImageIndex));
+
+modalPrevProject.addEventListener("click", () => switchProject(getAdjacentProject(-1)));
+modalNextProject.addEventListener("click", () => switchProject(getAdjacentProject(1)));
+
+lightboxCloseTriggers.forEach((trigger) => {
+  trigger.addEventListener("click", () => closeLightbox());
+});
+
+lightboxPrev.addEventListener("click", () => setLightboxImage(currentImageIndex - 1));
+lightboxNext.addEventListener("click", () => setLightboxImage(currentImageIndex + 1));
+lightboxZoomOut.addEventListener("click", () => setLightboxZoom(lightboxZoomIndex - 1));
+lightboxZoomIn.addEventListener("click", () => setLightboxZoom(lightboxZoomIndex + 1));
+lightboxImage.addEventListener("click", () => {
+  setLightboxZoom(lightboxZoomIndex === 0 ? 2 : 0);
 });
 
 document.addEventListener("keydown", (event) => {
+  if (isLightboxOpen()) {
+    if (event.key === "Escape") closeLightbox();
+    if (event.key === "ArrowLeft") setLightboxImage(currentImageIndex - 1);
+    if (event.key === "ArrowRight") setLightboxImage(currentImageIndex + 1);
+    if (event.key === "+" || event.key === "=") setLightboxZoom(lightboxZoomIndex + 1);
+    if (event.key === "-") setLightboxZoom(lightboxZoomIndex - 1);
+    return;
+  }
+
   if (event.key === "Escape" && modal.classList.contains("is-open")) {
     closeModal();
   }
