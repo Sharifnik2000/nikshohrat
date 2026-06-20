@@ -1408,16 +1408,35 @@ main {
 @media (max-width: 820px) {
   .site-nav {
     position: relative;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 14px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "brand time"
+      "upwork upwork";
+    align-items: center;
+    gap: 8px 16px;
+    min-height: auto;
+    padding-block: 16px;
+  }
+
+  .brand-mark {
+    grid-area: brand;
+    min-width: 0;
   }
 
   .nav-links {
-    width: 100%;
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: 2px;
+    display: contents;
+  }
+
+  .nav-links a {
+    grid-area: upwork;
+    justify-self: start;
+  }
+
+  .local-time {
+    grid-area: time;
+    justify-self: end;
+    align-self: center;
   }
 
   main {
@@ -1506,30 +1525,52 @@ main {
   }
 
   .modal-panel {
+    width: min(100%, calc(100vw - 16px));
     max-height: calc(100vh - 20px);
   }
 
+  .modal-close {
+    position: sticky;
+    top: 10px;
+    z-index: 6;
+    float: none;
+    display: flex;
+    align-items: center;
+    width: max-content;
+    margin: 10px 10px 0 auto;
+  }
+
   .modal-layout {
-    padding: 12px;
+    width: 100%;
+    gap: 18px;
+    padding: 10px;
   }
 
   .modal-gallery {
     position: relative;
     top: auto;
+    width: 100%;
   }
 
   .modal-visual {
-    height: min(68svh, 640px);
-    min-height: 420px;
+    height: clamp(300px, 44svh, 400px);
+    min-height: 0;
   }
 
   .modal-content {
-    padding: 12px 6px 18px;
+    width: 100%;
+    padding: 10px 0 18px;
   }
 
   .case-info-grid,
   .modal-project-nav {
     grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .case-info-card,
+  .project-nav-button {
+    width: 100%;
   }
 
   .case-info-card.tools-card {
@@ -1537,6 +1578,7 @@ main {
   }
 
   .thumbnail-rail {
+    width: 100%;
     grid-auto-columns: minmax(96px, 134px);
   }
 
