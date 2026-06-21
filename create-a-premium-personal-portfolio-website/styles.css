@@ -110,6 +110,16 @@ a {
   text-decoration: none;
 }
 
+:where(a, button, [role="button"]) {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(20, 18, 15, 0.08);
+}
+
+:where(a, button, [role="button"]):focus-visible {
+  outline: 2px solid rgba(20, 18, 15, 0.36);
+  outline-offset: 4px;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -161,6 +171,9 @@ h3,
 }
 
 .brand-mark {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   font-size: 16px;
   font-weight: 700;
 }
@@ -181,6 +194,9 @@ h3,
 .nav-links a,
 .local-time {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   white-space: nowrap;
 }
 
@@ -200,6 +216,11 @@ h3,
 .nav-links a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+.brand-mark:active,
+.nav-links a:active {
+  opacity: 0.66;
 }
 
 .local-time {
@@ -275,6 +296,19 @@ main {
   transform: translateY(-2px);
   background: var(--cream);
   color: var(--ink);
+}
+
+.book-button:active,
+.modal-close:active,
+.thumbnail-card:active,
+.project-nav-button:active,
+.lightbox-close:active,
+.lightbox-controls button:active {
+  transform: translateY(1px) scale(0.985);
+}
+
+.lightbox-nav:active {
+  transform: translateY(-50%) scale(0.985);
 }
 
 .intro-book {
@@ -427,7 +461,10 @@ main {
   max-width: 100%;
   overflow: hidden;
   padding: 1px 0 3px;
+  cursor: grab;
   mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+  touch-action: pan-y;
+  user-select: none;
 }
 
 .review-track {
@@ -436,6 +473,20 @@ main {
   gap: 10px;
   animation: reviewMarquee 30s linear infinite;
   will-change: transform;
+}
+
+.review-marquee.is-dragging {
+  cursor: grabbing;
+}
+
+.review-marquee.is-dragging .review-track {
+  animation-play-state: paused;
+}
+
+.review-note,
+.review-note img {
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .intro-reviews:hover .review-track {
@@ -578,6 +629,10 @@ main {
   border-color: rgba(20, 18, 15, 0.22);
   box-shadow: 0 28px 70px rgba(43, 33, 23, 0.18);
   transform: translateY(-6px) scale(1.008);
+}
+
+.project-card:active {
+  transform: translateY(-2px) scale(0.997);
 }
 
 .project-card:focus-visible {
@@ -919,6 +974,7 @@ main {
   width: min(1420px, 100%);
   max-height: calc(100vh - 40px);
   overflow: auto;
+  overscroll-behavior: contain;
   border: 1px solid rgba(255, 250, 240, 0.16);
   border-radius: var(--radius);
   background: var(--paper);
@@ -930,9 +986,12 @@ main {
   top: 16px;
   z-index: 4;
   float: right;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin: 16px 16px 0 0;
-  min-height: 38px;
-  padding: 0 14px;
+  min-height: 44px;
+  padding: 0 16px;
   border: 1px solid rgba(20, 18, 15, 0.16);
   border-radius: 999px;
   background: rgba(255, 250, 240, 0.82);
@@ -974,6 +1033,7 @@ main {
   appearance: none;
   isolation: isolate;
   box-shadow: 0 24px 58px rgba(43, 33, 23, 0.16);
+  transition: transform 180ms ease;
 }
 
 .modal-visual::before {
@@ -1248,6 +1308,7 @@ main {
   height: 100%;
   place-items: center;
   padding: clamp(18px, 4vw, 48px);
+  overscroll-behavior: contain;
 }
 
 .lightbox-figure {
@@ -1296,6 +1357,9 @@ main {
 .lightbox-close,
 .lightbox-controls button,
 .lightbox-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid rgba(255, 250, 240, 0.22);
   background: rgba(255, 250, 240, 0.1);
   color: var(--cream);
@@ -1312,8 +1376,8 @@ main {
 .lightbox-close {
   top: 22px;
   right: 22px;
-  min-height: 40px;
-  padding: 0 15px;
+  min-height: 44px;
+  padding: 0 16px;
   border-radius: 999px;
 }
 
@@ -1333,8 +1397,8 @@ main {
 }
 
 .lightbox-controls button {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 999px;
 }
 
@@ -1414,13 +1478,16 @@ main {
       "brand time"
       "upwork upwork";
     align-items: center;
-    gap: 8px 16px;
+    gap: 0 16px;
     min-height: auto;
-    padding-block: 16px;
+    padding-block: 10px;
   }
 
   .brand-mark {
     grid-area: brand;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     min-width: 0;
   }
 
@@ -1431,12 +1498,14 @@ main {
   .nav-links a {
     grid-area: upwork;
     justify-self: start;
+    min-height: 44px;
   }
 
   .local-time {
     grid-area: time;
     justify-self: end;
     align-self: center;
+    min-height: 44px;
   }
 
   main {
@@ -1536,6 +1605,8 @@ main {
     float: none;
     display: flex;
     align-items: center;
+    justify-content: center;
+    min-height: 44px;
     width: max-content;
     margin: 10px 10px 0 auto;
   }
@@ -1629,7 +1700,7 @@ main {
   .intro-book {
     top: 14px;
     right: 14px;
-    min-height: 42px;
+    min-height: 44px;
     padding-inline: 16px;
   }
 

@@ -321,6 +321,12 @@ let currentGallery = [];
 let currentImageIndex = 0;
 let lightboxZoomIndex = 0;
 
+const focusableSelector = [
+  "a[href]",
+  "button:not([disabled])",
+  "[tabindex]:not([tabindex='-1'])"
+].join(",");
+
 const toolIconMeta = {
   Figma: {
     label: "Figma",
@@ -364,6 +370,39 @@ const toolIconMeta = {
   }
 };
 
+function getFocusableElements(container) {
+  return Array.from(container.querySelectorAll(focusableSelector)).filter((element) => {
+    const isHidden = element.getAttribute("aria-hidden") === "true";
+    return !isHidden && element.getClientRects().length > 0;
+  });
+}
+
+function trapFocus(event, container) {
+  if (event.key !== "Tab") return;
+
+  const focusableElements = getFocusableElements(container);
+  if (!focusableElements.length) return;
+
+  const firstElement = focusableElements[0];
+  const lastElement = focusableElements[focusableElements.length - 1];
+
+  if (!container.contains(document.activeElement)) {
+    event.preventDefault();
+    (event.shiftKey ? lastElement : firstElement).focus();
+    return;
+  }
+
+  if (event.shiftKey && document.activeElement === firstElement) {
+    event.preventDefault();
+    lastElement.focus();
+  }
+
+  if (!event.shiftKey && document.activeElement === lastElement) {
+    event.preventDefault();
+    firstElement.focus();
+  }
+}
+
 function updateLocalTime() {
   const timeElement = document.querySelector("#localTime");
   if (!timeElement) return;
@@ -379,6 +418,104 @@ function updateLocalTime() {
   timeElement.textContent = `DK ${time}`;
 }
 
+function getAnimationDurationInSeconds(element) {
+  const duration = getComputedStyle(element).animationDuration.split(",")[0].trim();
+  if (duration.endsWith("ms")) return Number.parseFloat(duration) / 1000;
+  if (duration.endsWith("s")) return Number.parseFloat(duration);
+  return 30;
+}
+
+function setupReviewDrag() {
+  const marquee = document.querySelector(".review-marquee");
+  const track = document.querySelector(".review-track");
+  if (!marquee || !track) return;
+
+  let isDragging = false;
+  let pointerId = null;
+  let startX = 0;
+  let startOffset = 0;
+  let currentOffset = 0;
+  let animationDuration = getAnimationDurationInSeconds(track);
+
+  function getLoopWidth() {
+    return track.scrollWidth / 2;
+  }
+
+  function normalizeOffset(offset) {
+    const loopWidth = getLoopWidth();
+    if (!loopWidth) return offset;
+
+    let normalized = offset % loopWidth;
+    if (normalized > 0) normalized -= loopWidth;
+    return normalized;
+  }
+
+  function getCurrentTranslateX() {
+    const transform = getComputedStyle(track).transform;
+    if (!transform || transform === "none") return normalizeOffset(0);
+
+    return normalizeOffset(new DOMMatrixReadOnly(transform).m41);
+  }
+
+  function setTrackOffset(offset) {
+    currentOffset = normalizeOffset(offset);
+    track.style.transform = `translate3d(${currentOffset}px, 0, 0)`;
+  }
+
+  function resumeReviewAnimation() {
+    const loopWidth = getLoopWidth();
+    const duration = animationDuration;
+
+    track.style.animation = "";
+    track.style.transform = "";
+
+    if (loopWidth && duration > 0.05) {
+      const progress = (currentOffset + loopWidth) / loopWidth;
+      track.style.animationDelay = `-${(progress * duration).toFixed(2)}s`;
+    }
+  }
+
+  marquee.addEventListener("pointerdown", (event) => {
+    if (event.button !== undefined && event.button !== 0) return;
+
+    isDragging = true;
+    pointerId = event.pointerId;
+    startX = event.clientX;
+    startOffset = getCurrentTranslateX();
+    currentOffset = startOffset;
+    animationDuration = getAnimationDurationInSeconds(track);
+
+    marquee.classList.add("is-dragging");
+    track.style.animation = "none";
+    setTrackOffset(startOffset);
+    marquee.setPointerCapture(pointerId);
+  });
+
+  marquee.addEventListener("pointermove", (event) => {
+    if (!isDragging || event.pointerId !== pointerId) return;
+
+    const deltaX = event.clientX - startX;
+    setTrackOffset(startOffset + deltaX);
+  });
+
+  function endDrag(event) {
+    if (!isDragging || event.pointerId !== pointerId) return;
+
+    isDragging = false;
+    marquee.classList.remove("is-dragging");
+
+    if (marquee.hasPointerCapture(pointerId)) {
+      marquee.releasePointerCapture(pointerId);
+    }
+
+    pointerId = null;
+    resumeReviewAnimation();
+  }
+
+  marquee.addEventListener("pointerup", endDrag);
+  marquee.addEventListener("pointercancel", endDrag);
+}
+
 function renderTools(tools) {
   const toolList = tools.split(",").map((tool) => tool.trim());
 
@@ -389,7 +526,7 @@ function renderTools(tools) {
 
       return `
         <span class="tool-icon" role="img" aria-label="${icon.label}" title="${icon.label}">
-          <img src="${icon.image}" alt="">
+          <img src="${icon.image}" alt="" loading="lazy" decoding="async">
         </span>
       `;
     })
@@ -452,7 +589,7 @@ function renderThumbnails() {
           aria-label="Show image ${index + 1} of ${currentGallery.length}"
           aria-current="${index === currentImageIndex ? "true" : "false"}"
         >
-          <img src="${visual.src}" alt="">
+          <img src="${visual.src}" alt="" loading="lazy" decoding="async">
         </button>
       `
     )
@@ -524,6 +661,8 @@ function closeModal() {
   if (lastFocusedElement) {
     lastFocusedElement.focus();
   }
+
+  lastFocusedElement = null;
 }
 
 function isLightboxOpen() {
@@ -616,16 +755,30 @@ lightboxImage.addEventListener("click", () => {
 
 document.addEventListener("keydown", (event) => {
   if (isLightboxOpen()) {
+    if (event.key === "Tab") trapFocus(event, lightbox);
     if (event.key === "Escape") closeLightbox();
-    if (event.key === "ArrowLeft") setLightboxImage(currentImageIndex - 1);
-    if (event.key === "ArrowRight") setLightboxImage(currentImageIndex + 1);
-    if (event.key === "+" || event.key === "=") setLightboxZoom(lightboxZoomIndex + 1);
-    if (event.key === "-") setLightboxZoom(lightboxZoomIndex - 1);
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      setLightboxImage(currentImageIndex - 1);
+    }
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      setLightboxImage(currentImageIndex + 1);
+    }
+    if (event.key === "+" || event.key === "=") {
+      event.preventDefault();
+      setLightboxZoom(lightboxZoomIndex + 1);
+    }
+    if (event.key === "-") {
+      event.preventDefault();
+      setLightboxZoom(lightboxZoomIndex - 1);
+    }
     return;
   }
 
-  if (event.key === "Escape" && modal.classList.contains("is-open")) {
-    closeModal();
+  if (modal.classList.contains("is-open")) {
+    if (event.key === "Tab") trapFocus(event, modal);
+    if (event.key === "Escape") closeModal();
   }
 });
 
@@ -645,4 +798,5 @@ if (cursor && window.matchMedia("(pointer: fine)").matches) {
 }
 
 updateLocalTime();
+setupReviewDrag();
 setInterval(updateLocalTime, 1000);
