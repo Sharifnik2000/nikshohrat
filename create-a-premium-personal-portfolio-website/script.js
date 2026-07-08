@@ -315,7 +315,12 @@ const lightboxZoomLabel = document.querySelector("#lightboxZoomLabel");
 const lightboxCloseTriggers = document.querySelectorAll("[data-close-lightbox]");
 const zoomLevels = [1, 1.35, 1.75, 2.25];
 
+const contactModal = document.querySelector("#contactModal");
+const contactOpenTriggers = document.querySelectorAll("[data-open-contact]");
+const contactCloseTriggers = document.querySelectorAll("[data-close-contact]");
+
 let lastFocusedElement = null;
+let contactLastFocusedElement = null;
 let currentProjectKey = null;
 let currentGallery = [];
 let currentImageIndex = 0;
@@ -715,6 +720,34 @@ function closeLightbox(shouldReturnFocus = true) {
   }
 }
 
+function isContactOpen() {
+  return contactModal?.classList.contains("is-open");
+}
+
+function openContactModal() {
+  if (!contactModal) return;
+
+  contactLastFocusedElement = document.activeElement;
+  contactModal.classList.add("is-open");
+  contactModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("contact-open");
+  contactModal.querySelector(".contact-close")?.focus();
+}
+
+function closeContactModal() {
+  if (!isContactOpen()) return;
+
+  contactModal.classList.remove("is-open");
+  contactModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("contact-open");
+
+  if (contactLastFocusedElement) {
+    contactLastFocusedElement.focus();
+  }
+
+  contactLastFocusedElement = null;
+}
+
 focusableCards.forEach((card) => {
   card.addEventListener("click", () => openModal(card.dataset.project));
   card.addEventListener("keydown", (event) => {
@@ -753,7 +786,21 @@ lightboxImage.addEventListener("click", () => {
   setLightboxZoom(lightboxZoomIndex === 0 ? 2 : 0);
 });
 
+contactOpenTriggers.forEach((trigger) => {
+  trigger.addEventListener("click", openContactModal);
+});
+
+contactCloseTriggers.forEach((trigger) => {
+  trigger.addEventListener("click", closeContactModal);
+});
+
 document.addEventListener("keydown", (event) => {
+  if (isContactOpen()) {
+    if (event.key === "Tab") trapFocus(event, contactModal);
+    if (event.key === "Escape") closeContactModal();
+    return;
+  }
+
   if (isLightboxOpen()) {
     if (event.key === "Tab") trapFocus(event, lightbox);
     if (event.key === "Escape") closeLightbox();

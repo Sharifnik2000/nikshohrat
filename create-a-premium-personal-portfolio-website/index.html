@@ -15,8 +15,7 @@
 
     <header class="site-nav" aria-label="Primary navigation">
       <a class="brand-mark" href="#top" aria-label="Sharif Nikshohrat home">Sharif Nikshohrat</a>
-      <nav class="nav-links" aria-label="Upwork profile and local time">
-        <a href="https://www.upwork.com/freelancers/~01335d34afd4d84e67?mp_source=share" target="_blank" rel="noreferrer">Upwork</a>
+      <nav class="nav-links" aria-label="Local time">
         <span class="local-time" id="localTime" aria-label="Local time in Denmark">DK --:--:--</span>
       </nav>
     </header>
@@ -25,7 +24,7 @@
       <section class="hero-shell" aria-label="Sharif Nikshohrat portfolio introduction">
         <aside class="intro-card">
           <img src="assets/portrait.png" alt="Editorial portrait of Sharif in a warm design studio" loading="eager" fetchpriority="high" decoding="async">
-          <a class="book-button intro-book" href="https://www.upwork.com/freelancers/~01335d34afd4d84e67?mp_source=share" target="_blank" rel="noreferrer">Book a call</a>
+          <button class="book-button intro-book" type="button" data-open-contact>Book a call</button>
           <div class="intro-overlay">
             <p class="eyebrow">Food Brand Designer</p>
             <h1>Hey, I'm Sharif.</h1>
@@ -285,7 +284,7 @@
           <span>Your food brand has a story.</span>
           <span>Let&rsquo;s help people feel it!</span>
         </h2>
-        <a class="book-button" href="https://www.upwork.com/freelancers/~01335d34afd4d84e67?mp_source=share" target="_blank" rel="noreferrer">Book a call</a>
+        <button class="book-button" type="button" data-open-contact>Contact me</button>
       </section>
     </main>
 
@@ -349,6 +348,54 @@
           <button id="lightboxZoomIn" type="button" aria-label="Zoom in">+</button>
         </div>
         <button class="lightbox-nav lightbox-next" id="lightboxNext" type="button" aria-label="Next image">Next</button>
+      </section>
+    </div>
+
+    <div class="contact-modal" id="contactModal" aria-hidden="true">
+      <div class="contact-backdrop" data-close-contact></div>
+      <section class="contact-panel" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+        <button class="modal-close contact-close" type="button" aria-label="Close contact options" data-close-contact>Close</button>
+        <p class="eyebrow">Contact me</p>
+        <h2 id="contactModalTitle">Choose how to contact Sharif.</h2>
+        <p class="contact-copy">For project inquiries, menu systems, packaging, brand identity, or digital UI work.</p>
+        <div class="contact-options" aria-label="Contact options">
+          <a class="contact-option" href="https://wa.me/4581913288?text=Hi%20Sharif%2C%20I%27d%20like%20to%20talk%20about%20a%20food%20brand%20design%20project." target="_blank" rel="noreferrer">
+            <span class="contact-option-icon" aria-hidden="true">
+              <img src="assets/contact-whatsapp.png" alt="">
+            </span>
+            <span>
+              <strong>WhatsApp</strong>
+              <small>+45 8191 3288</small>
+            </span>
+          </a>
+          <a class="contact-option" href="mailto:sharif@nikshohrat.com?subject=Project%20inquiry%20for%20Sharif%20Nikshohrat">
+            <span class="contact-option-icon" aria-hidden="true">
+              <img src="assets/contact-email.png" alt="">
+            </span>
+            <span>
+              <strong>Email</strong>
+              <small>sharif@nikshohrat.com</small>
+            </span>
+          </a>
+          <a class="contact-option" href="https://www.upwork.com/freelancers/~01335d34afd4d84e67?mp_source=share" target="_blank" rel="noreferrer">
+            <span class="contact-option-icon" aria-hidden="true">
+              <img src="assets/contact-upwork.png" alt="">
+            </span>
+            <span>
+              <strong>Upwork</strong>
+              <small>View profile and start a project</small>
+            </span>
+          </a>
+          <a class="contact-option" href="https://calendar.app.google/YGfscLyRi5fq3q7C6" target="_blank" rel="noreferrer">
+            <span class="contact-option-icon" aria-hidden="true">
+              <img src="assets/contact-calendar.png" alt="">
+            </span>
+            <span>
+              <strong>Book a call</strong>
+              <small>Choose a time on Google Calendar</small>
+            </span>
+          </a>
+        </div>
       </section>
     </div>
 
