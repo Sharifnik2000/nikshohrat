@@ -1,0 +1,10 @@
+{
+  "name": "nikshohrat",
+  "compatibility_date": "2026-07-08",
+  "assets": {
+    "directory": "./create-a-premium-personal-portfolio-website"
+  },
+  "observability": {
+    "enabled": true
+  }
+}
