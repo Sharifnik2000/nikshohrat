@@ -7,18 +7,24 @@ const base = process.env.PREVIEW_URL || 'http://127.0.0.1:4178/';
 const root = path.resolve(__dirname, '..');
 const site = path.join(root, 'create-a-premium-personal-portfolio-website');
 const upwork = 'https://www.upwork.com/freelancers/~01335d34afd4d84e67?mp_source=share';
+const platforms = {
+  'upwork/': { label: 'Upwork', link: upwork, selector: '.upwork-link' },
+  'fiverr/': { label: 'Fiverr', link: 'https://www.fiverr.com/s/zAAlZ8K', selector: '.fiverr-link' },
+};
 
 async function main() {
-  for (const file of ['script.js', 'image-assets.js']) {
-    assert.equal(await fs.readFile(path.join(site, file), 'utf8'),
-      await fs.readFile(path.join(site, 'upwork', file), 'utf8'), `${file} drifted`);
+  for (const variant of Object.keys(platforms)) {
+    for (const file of ['script.js', 'image-assets.js']) {
+      assert.equal(await fs.readFile(path.join(site, file), 'utf8'),
+        await fs.readFile(path.join(site, variant, file), 'utf8'), `${variant}${file} drifted`);
+    }
   }
   await fs.mkdir(path.join(root, '.qa'), { recursive: true });
   const browser = await chromium.launch({ channel: 'chrome', headless: true });
   try {
     for (const width of [375, 390, 430, 768, 820, 1024, 1440]) {
       let mainContent;
-      for (const variant of ['', 'upwork/']) {
+      for (const variant of ['', ...Object.keys(platforms)]) {
         const context = await browser.newContext({
           viewport: { width, height: 1000 },
           reducedMotion: 'reduce',
@@ -55,12 +61,15 @@ async function main() {
           assert(name.x + name.width <= clock.x, 'Name and clock overlap');
         }
         if (variant) {
+          const platform = platforms[variant];
           assert.equal(await page.locator('#contactModal, [data-open-contact]').count(), 0);
           const external = await page.locator('a[href]').evaluateAll(links =>
             links.map(link => link.getAttribute('href')).filter(href => !href.startsWith('#')));
           assert.equal(external.length, 3);
-          assert(external.every(href => href === upwork));
-          const headerLink = await page.locator('.upwork-link').boundingBox();
+          assert(external.every(href => href === platform.link));
+          const link = page.locator(platform.selector);
+          assert.equal(await link.textContent(), platform.label);
+          const headerLink = await link.boundingBox();
           assert(headerLink.height >= 44);
           if (width <= 820) assert(headerLink.y >= name.y + name.height);
         } else {
@@ -81,11 +90,14 @@ async function main() {
 
         await page.locator('[data-project]').first().click();
         await page.locator('#modalImage').evaluate(image => image.decode());
+        await page.locator('#modalThumbnails img, #modalTools img').evaluateAll(images =>
+          Promise.all(images.map(image => image.decode())));
+        await page.waitForLoadState('networkidle');
+        if (width === 390 || width === 1440) {
+          await page.screenshot({ path: path.join(root, '.qa', `${variant ? variant.slice(0, -1) : 'main'}-gallery-${width}.png`) });
+        }
         await page.keyboard.press('Shift+Tab');
         assert.equal(await page.evaluate(() => document.activeElement.closest('#caseModal')?.id), 'caseModal');
-        if (width === 390 || width === 1440) {
-          await page.screenshot({ path: path.join(root, '.qa', `${variant ? 'upwork' : 'main'}-gallery-${width}.png`) });
-        }
         await page.keyboard.press('Escape');
         assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
         assert.deepEqual(errors, []);

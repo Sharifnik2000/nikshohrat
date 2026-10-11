@@ -1,14 +1,15 @@
 # Sharif Nikshohrat Portfolio
 
-This repository publishes one static website with two entry points:
+This repository publishes one static website with three entry points:
 
 | URL path | Version | Contact behavior |
 | --- | --- | --- |
 | `/` | Main portfolio | Popup with WhatsApp, email, Upwork, and Google Calendar |
 | `/upwork/` | Upwork portfolio | Header and both booking links go directly to Upwork; no contact popup |
+| `/fiverr/` | Fiverr portfolio | Header and both booking links go directly to Fiverr; no contact popup |
 
-Both versions contain the same current projects, reviews, galleries, and interactions.
-Use the main address for general clients and append `/upwork/` when sharing the Upwork version.
+All versions contain the same current projects, reviews, galleries, and interactions.
+Use the main address for general clients, `/upwork/` for Upwork, and `/fiverr/` for Fiverr.
 
 ## Hosting
 
@@ -22,21 +23,23 @@ After reviewing and merging the pull request, verify the connected Cloudflare bu
 and deployment succeeds. If automatic builds are not configured, deploy this repository
 using the existing Cloudflare project. A merge alone does not prove the website is live.
 
-## Updating Both Versions
+## Updating All Versions
 
 1. Edit the main files inside `create-a-premium-personal-portfolio-website/`.
 2. Include any new images in its optimized asset map (`image-assets.js`) and asset folder.
 3. From the repository root, run:
 
    ```sh
-   python scripts/sync-upwork.py
+   python scripts/sync-upwork.py --variant all
    ```
 
-4. Commit the main files **and** the regenerated `upwork/` files in the same change.
+4. Commit the main files **and** the regenerated `upwork/` and `fiverr/` files in the same change.
 
-Do not manually maintain separate project/review copies in `upwork/`; the sync command
+Do not manually maintain separate project/review copies in `upwork/` or `fiverr/`; the sync command
 preserves those from the main page and changes only contact behavior and header layout.
 It uses Python's standard library, with no package installation or website build needed.
+Use `--variant fiverr` to rebuild only Fiverr. Without an argument, the original command
+still rebuilds only Upwork for backward compatibility.
 
 ## Performance
 
@@ -44,7 +47,7 @@ It uses Python's standard library, with no package installation or website build
 - Full-resolution lossless gallery images load only when the lightbox opens.
 - Contact icons load only after opening the contact popup.
 - Local WOFF2 fonts and deferred scripts.
-- `_headers` applies long-lived caching to content-hashed images/fonts in both versions,
+- `_headers` applies long-lived caching to content-hashed images/fonts in all versions,
   while HTML, CSS, and JavaScript revalidate to pick up updates.
 - Original images already in the repository remain available but are not downloaded by
   the current pages. Local browser profiles, screenshots, and private working files are
@@ -58,5 +61,6 @@ Run from the repository root:
 python -m http.server 4178 --bind 127.0.0.1 --directory create-a-premium-personal-portfolio-website
 ```
 
-Open `http://127.0.0.1:4178/` and `http://127.0.0.1:4178/upwork/`.
+Open `http://127.0.0.1:4178/`, `http://127.0.0.1:4178/upwork/`, or
+`http://127.0.0.1:4178/fiverr/`.
 The basic Python server does not emulate Cloudflare's `_headers` cache rules.
