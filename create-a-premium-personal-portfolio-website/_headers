@@ -18,7 +18,19 @@
   Cache-Control: no-cache
 /upwork/image-assets.js
   Cache-Control: no-cache
+/fiverr/
+  Cache-Control: no-cache
+/fiverr/index.html
+  Cache-Control: no-cache
+/fiverr/styles.css
+  Cache-Control: no-cache
+/fiverr/script.js
+  Cache-Control: no-cache
+/fiverr/image-assets.js
+  Cache-Control: no-cache
 /assets/optimized/*
   Cache-Control: public, max-age=31536000, immutable
 /upwork/assets/optimized/*
+  Cache-Control: public, max-age=31536000, immutable
+/fiverr/assets/optimized/*
   Cache-Control: public, max-age=31536000, immutable

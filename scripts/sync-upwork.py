@@ -1,4 +1,5 @@
-"""Build the Upwork-only page from the main portfolio. No third-party packages."""
+"""Build marketplace-only pages from the main portfolio. No third-party packages."""
+import argparse
 from html import escape
 from html.parser import HTMLParser
 from pathlib import Path
@@ -6,12 +7,17 @@ import shutil
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "create-a-premium-personal-portfolio-website"
-UPWORK = "https://www.upwork.com/freelancers/~01335d34afd4d84e67?mp_source=share"
+PLATFORMS = {
+    "upwork": ("Upwork", "https://www.upwork.com/freelancers/~01335d34afd4d84e67?mp_source=share"),
+    "fiverr": ("Fiverr", "https://www.fiverr.com/s/zAAlZ8K"),
+}
 
 
-class UpworkPage(HTMLParser):
-    def __init__(self, source):
+class MarketplacePage(HTMLParser):
+    def __init__(self, source, platform):
         super().__init__(convert_charrefs=False)
+        self.platform = platform
+        self.label, self.url = PLATFORMS[platform]
         self.source = source
         self.lines = source.splitlines(keepends=True)
         self.edits = []
@@ -45,8 +51,8 @@ class UpworkPage(HTMLParser):
         if tag == "nav" and "nav-links" in attrs.get("class", "").split():
             replacement = (
                 '<nav class="nav-links" aria-label="Professional profile and local time">'
-                f'\n        <a class="upwork-link" href="{UPWORK}" '
-                'target="_blank" rel="noreferrer">Upwork</a>'
+                f'\n        <a class="{self.platform}-link" href="{self.url}" '
+                f'target="_blank" rel="noreferrer">{self.label}</a>'
             )
             self.edits.append((start, start + len(self.get_starttag_text()), replacement))
             self.navs += 1
@@ -64,7 +70,7 @@ class UpworkPage(HTMLParser):
         if tag == "button" and self.button is not None:
             button_start, classes = self.button
             replacement = (
-                f'<a class="{escape(classes, quote=True)}" href="{UPWORK}" '
+                f'<a class="{escape(classes, quote=True)}" href="{self.url}" '
                 'target="_blank" rel="noreferrer">Book a call</a>'
             )
             self.edits.append((button_start, end, replacement))
@@ -75,16 +81,17 @@ class UpworkPage(HTMLParser):
         self.feed(self.source)
         self.close()
         if (self.navs, self.buttons, self.modals) != (1, 2, 1) or self.contact_depth:
-            raise ValueError("Contact structure changed; review the Upwork transformation before publishing")
+            raise ValueError("Contact structure changed; review the marketplace transformation before publishing")
         result = self.source
         for start, end, replacement in sorted(self.edits, reverse=True):
             result = result[:start] + replacement + result[end:]
         return result
 
 
-def main():
-    target = SITE / "upwork"
-    markup = UpworkPage((SITE / "index.html").read_text(encoding="utf-8")).render()
+def build_variant(platform):
+    label, _ = PLATFORMS[platform]
+    target = SITE / platform
+    markup = MarketplacePage((SITE / "index.html").read_text(encoding="utf-8"), platform).render()
     assets = [p for p in (SITE / "assets" / "optimized").rglob("*")
               if p.suffix in {".webp", ".woff2"}]
     if not assets:
@@ -92,17 +99,17 @@ def main():
     target.mkdir(exist_ok=True)
     (target / "index.html").write_text(markup, encoding="utf-8", newline="\n")
     styles = (SITE / "styles.css").read_text(encoding="utf-8")
-    styles += """
-/* Only the Upwork variant has a header link below the brand on mobile. */
-@media (max-width: 820px) {
-  .site-nav {
-    grid-template-areas: "brand time" "upwork .";
-  }
-  .upwork-link {
-    grid-area: upwork;
+    styles += f"""
+/* Only the {label} variant has a header link below the brand on mobile. */
+@media (max-width: 820px) {{
+  .site-nav {{
+    grid-template-areas: "brand time" "{platform} .";
+  }}
+  .{platform}-link {{
+    grid-area: {platform};
     justify-self: start;
-  }
-}
+  }}
+}}
 """
     (target / "styles.css").write_text(styles, encoding="utf-8", newline="\n")
     for name in ("script.js", "image-assets.js"):
@@ -111,7 +118,15 @@ def main():
         destination = target / source.relative_to(SITE)
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, destination)
-    print(f"Synced /upwork/: same portfolio, Upwork-only contact, {len(assets)} optimized assets")
+    print(f"Synced /{platform}/: same portfolio, {label}-only contact, {len(assets)} optimized assets")
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--variant", choices=[*PLATFORMS, "all"], default="upwork")
+    args = parser.parse_args()
+    for platform in PLATFORMS if args.variant == "all" else [args.variant]:
+        build_variant(platform)
 
 
 if __name__ == "__main__":
