@@ -1,0 +1,24 @@
+/
+  Cache-Control: no-cache
+/index.html
+  Cache-Control: no-cache
+/styles.css
+  Cache-Control: no-cache
+/script.js
+  Cache-Control: no-cache
+/image-assets.js
+  Cache-Control: no-cache
+/upwork/
+  Cache-Control: no-cache
+/upwork/index.html
+  Cache-Control: no-cache
+/upwork/styles.css
+  Cache-Control: no-cache
+/upwork/script.js
+  Cache-Control: no-cache
+/upwork/image-assets.js
+  Cache-Control: no-cache
+/assets/optimized/*
+  Cache-Control: public, max-age=31536000, immutable
+/upwork/assets/optimized/*
+  Cache-Control: public, max-age=31536000, immutable

@@ -4,6 +4,9 @@ const categories = {
     meta: "Category: Menus for restaurants and food venues",
     image: "assets/menu-spaghetti-trifold.png",
     alt: "Spaghetti trifold restaurant menu opened on a white tablecloth",
+    projectId: "la-tavola-menu",
+    projectName: "La Tavola Illustrated Menu",
+    projectType: "Restaurant menu",
     overview: "A focused category for printed and digital menu systems across restaurants, cafes, bakeries, and specialty food venues.",
     result: "Menu system designed for clarity, appetite, and a more premium ordering moment.",
     focus: "Clear hierarchy, appetite-led sequencing, premium perception, and menu structures that help guests choose faster.",
@@ -29,19 +32,38 @@ const categories = {
     finalVisuals: [
       {
         src: "assets/menu-cover.png",
-        alt: "Mulberry Street dessert cocktail menu held in a warm restaurant setting"
+        alt: "Mulberry Street dessert cocktail menu held in a warm restaurant setting",
+        projectId: "mulberry-street-menus",
+        projectName: "Mulberry Street Cocktail Menus",
+        projectType: "Restaurant menu system"
       },
       {
         src: "assets/menu-late-night-happy-hour.png",
-        alt: "Mulberry Street late night happy hour menu mockup in a warm bar setting"
+        alt: "Mulberry Street late night happy hour menu mockup in a warm bar setting",
+        projectId: "mulberry-street-menus",
+        projectName: "Mulberry Street Cocktail Menus",
+        projectType: "Restaurant menu system"
+      },
+      {
+        src: "assets/menu-garrison-bourbon-table-tent.png",
+        alt: "Premium Garrison Brothers bourbon pairing dinner table tent designed for Mulberry Street Ristorante",
+        projectId: "mulberry-street-bourbon-dinner",
+        projectName: "Garrison Brothers Bourbon Dinner",
+        projectType: "Premium table tent"
       },
       {
         src: "assets/menu-cafe-whisper.png",
-        alt: "Whisper coffee menu opened inside a bright cafe interior"
+        alt: "Whisper coffee menu opened inside a bright cafe interior",
+        projectId: "whisper-cafe-menu",
+        projectName: "Whisper Cafe Menu",
+        projectType: "Cafe menu"
       },
       {
         src: "assets/menu-domano-spread.png",
-        alt: "Domano restaurant menu spread held open in a warm dining room"
+        alt: "Domano restaurant menu spread held open in a warm dining room",
+        projectId: "domano-menu",
+        projectName: "Domano Menu System",
+        projectType: "Restaurant menu"
       }
     ]
   },
@@ -50,6 +72,9 @@ const categories = {
     meta: "Category: Packaging systems for food products",
     image: "assets/packaging-magic-milk.png",
     alt: "Magic Milk packaging design displayed on a retail shelf",
+    projectId: "magic-milk-packaging",
+    projectName: "Magic Milk Packaging",
+    projectType: "Retail packaging",
     overview: "Packaging concepts and systems for products that need to feel valuable, clear, and shelf-ready at first glance.",
     result: "Packaging direction built to make products feel more valuable at first glance.",
     focus: "Shelf presence, product storytelling, scalable label logic, ingredient cues, and tactile brand expression.",
@@ -75,15 +100,24 @@ const categories = {
     finalVisuals: [
       {
         src: "assets/packaging-magic-milk.png",
-        alt: "Magic Milk packaging design displayed on a retail shelf"
+        alt: "Magic Milk packaging design displayed on a retail shelf",
+        projectId: "magic-milk-packaging",
+        projectName: "Magic Milk Packaging",
+        projectType: "Retail packaging"
       },
       {
         src: "assets/packaging-chocolate-tin.png",
-        alt: "Premium Farmand chocolate packaging in a dark geometric tin"
+        alt: "Premium Farmand chocolate packaging in a dark geometric tin",
+        projectId: "farmand-chocolate",
+        projectName: "Farmand Chocolate Tin",
+        projectType: "Premium packaging"
       },
       {
         src: "assets/packaging-cravo-chips.png",
-        alt: "Cravo sea salt and paprika potato chips packaging shown from the front and back"
+        alt: "Cravo sea salt and paprika potato chips packaging shown from the front and back",
+        projectId: "cravo-snacks",
+        projectName: "Cravo Snack Packaging",
+        projectType: "Snack packaging"
       }
     ]
   },
@@ -92,6 +126,9 @@ const categories = {
     meta: "Category: Label systems for food and beverage brands",
     image: "assets/label-design-bottles.png",
     alt: "Nordlys kombucha label design across three bottle flavors",
+    projectId: "nordlys-kombucha",
+    projectName: "Nordlys Kombucha Labels",
+    projectType: "Beverage label system",
     overview: "Label systems designed to clarify product families, strengthen shelf presence, and make each flavor easy to recognize.",
     result: "Label system created for stronger flavor recognition and a calmer shelf presence.",
     focus: "Product hierarchy, variant logic, material character, regulatory clarity, and a premium first impression.",
@@ -117,11 +154,17 @@ const categories = {
     finalVisuals: [
       {
         src: "assets/label-design-bottles.png",
-        alt: "Nordlys kombucha bottles with sage birch, pale amber, and wild raspberry labels"
+        alt: "Nordlys kombucha bottles with sage birch, pale amber, and wild raspberry labels",
+        projectId: "nordlys-kombucha",
+        projectName: "Nordlys Kombucha Labels",
+        projectType: "Beverage label system"
       },
       {
         src: "assets/label-design-gift-box.png",
-        alt: "Nordlys kombucha gift box with three labeled bottles"
+        alt: "Nordlys kombucha gift box with three labeled bottles",
+        projectId: "nordlys-kombucha",
+        projectName: "Nordlys Kombucha Labels",
+        projectType: "Beverage label system"
       }
     ]
   },
@@ -130,6 +173,9 @@ const categories = {
     meta: "Category: Digital menus and ordering interfaces",
     image: "assets/digital-menu-ui.png",
     alt: "Digital restaurant menu UI displayed on tablet and phone",
+    projectId: "restaurant-ordering-ui",
+    projectName: "Restaurant Ordering UI",
+    projectType: "Digital menu experience",
     overview: "Digital menu experiences for restaurants that need guests to browse, understand, and order with less friction.",
     result: "Digital menu interface shaped to make browsing and ordering feel smoother.",
     focus: "Appetite-first layouts, category clarity, dish cards, ordering flow, and responsive menu behavior.",
@@ -155,7 +201,10 @@ const categories = {
     finalVisuals: [
       {
         src: "assets/ui-web-design.png",
-        alt: "Premium wine brand e-commerce website displayed on a desktop monitor"
+        alt: "Premium wine brand e-commerce website displayed on a desktop monitor",
+        projectId: "veloro-wine-ui",
+        projectName: "Veloro Wine E-commerce",
+        projectType: "Web UI design"
       }
     ]
   },
@@ -164,6 +213,9 @@ const categories = {
     meta: "Category: Social content systems for food brands",
     image: "assets/social-media-profile-grid.png",
     alt: "Nordgloed gelato social media profile grid displayed on a phone",
+    projectId: "nordgloed-social",
+    projectName: "Nordgloed Social Campaign",
+    projectType: "Social media system",
     overview: "Social media systems for restaurants and food brands that need consistent, appetising, and recognisable content.",
     result: "Social content system designed to make food moments feel consistent and campaign-ready.",
     focus: "Campaign art direction, branded templates, launch content, product storytelling, and visual consistency across posts.",
@@ -189,19 +241,45 @@ const categories = {
     finalVisuals: [
       {
         src: "assets/social-media-story-chocolate.png",
-        alt: "Nordgloed gelato Instagram story design with chocolate gelato"
+        alt: "Nordgloed gelato Instagram story design with chocolate gelato",
+        projectId: "nordgloed-social",
+        projectName: "Nordgloed Social Campaign",
+        projectType: "Social media system"
       },
       {
         src: "assets/social-media-feed-post.png",
-        alt: "Nordgloed gelato Instagram feed post mockup on a phone"
+        alt: "Nordgloed gelato Instagram feed post mockup on a phone",
+        projectId: "nordgloed-social",
+        projectName: "Nordgloed Social Campaign",
+        projectType: "Social media system"
       },
       {
         src: "assets/social-media-story-set.png",
-        alt: "Set of three Nordgloed gelato Instagram story designs on phones"
+        alt: "Set of three Nordgloed gelato Instagram story designs on phones",
+        projectId: "nordgloed-social",
+        projectName: "Nordgloed Social Campaign",
+        projectType: "Social media system"
       },
       {
         src: "assets/social-media-profile-grid.png",
-        alt: "Nordgloed gelato Instagram profile grid and post system"
+        alt: "Nordgloed gelato Instagram profile grid and post system",
+        projectId: "nordgloed-social",
+        projectName: "Nordgloed Social Campaign",
+        projectType: "Social media system"
+      },
+      {
+        src: "assets/social-babyboo-content-grid.png",
+        alt: "BabyBoo social media content grid shown inside a smartphone mockup",
+        projectId: "babyboo-social-campaign",
+        projectName: "BabyBoo Social Campaign",
+        projectType: "Social media design"
+      },
+      {
+        src: "assets/social-babyboo-set-deal.png",
+        alt: "BabyBoo baby food warmer set promotion shown inside a smartphone mockup",
+        projectId: "babyboo-social-campaign",
+        projectName: "BabyBoo Social Campaign",
+        projectType: "Social media design"
       }
     ]
   },
@@ -210,6 +288,9 @@ const categories = {
     meta: "Category: Digital menu boards and in-store screens",
     image: "assets/digital-menu-tv-board.png",
     alt: "Digital restaurant menu boards displayed above a counter",
+    projectId: "nordkylling-menu-boards",
+    projectName: "Nordkylling Digital Menu Boards",
+    projectType: "In-store digital menu",
     overview: "Digital menu board systems for restaurants that need clear ordering moments, strong product appetite, and fast in-store decisions.",
     result: "In-store menu boards designed for quick scanning, stronger appetite, and clearer choices.",
     focus: "Large-screen hierarchy, category structure, price clarity, product photography, and readable layouts for busy counters.",
@@ -235,7 +316,10 @@ const categories = {
     finalVisuals: [
       {
         src: "assets/digital-menu-tv-board.png",
-        alt: "Nordkylling digital TV menu board system across three screens"
+        alt: "Nordkylling digital TV menu board system across three screens",
+        projectId: "nordkylling-menu-boards",
+        projectName: "Nordkylling Digital Menu Boards",
+        projectType: "In-store digital menu"
       }
     ]
   },
@@ -244,6 +328,9 @@ const categories = {
     meta: "Category: Labels for beverage brands",
     image: "assets/beverage-nordskal-campaign.png",
     alt: "Nordskal canned cocktail campaign with three cans and fresh ingredients",
+    projectId: "nordskal-beverage",
+    projectName: "Nordskal Canned Cocktails",
+    projectType: "Beverage identity and labels",
     overview: "Label systems for beverage brands that need stronger flavor recognition, shelf confidence, and premium recall.",
     result: "Beverage label system built for flavor clarity, premium recall, and stronger shelf confidence.",
     focus: "Flavor architecture, can and bottle hierarchy, color cues, material finish, and a flexible system across variants.",
@@ -269,15 +356,24 @@ const categories = {
     finalVisuals: [
       {
         src: "assets/beverage-nordskal-campaign.png",
-        alt: "Nordskal canned cocktail campaign with three cans and fresh ingredients"
+        alt: "Nordskal canned cocktail campaign with three cans and fresh ingredients",
+        projectId: "nordskal-beverage",
+        projectName: "Nordskal Canned Cocktails",
+        projectType: "Beverage identity and labels"
       },
       {
         src: "assets/beverage-nordskal-bus-shelter.png",
-        alt: "Nordskal beverage poster displayed on a city bus shelter"
+        alt: "Nordskal beverage poster displayed on a city bus shelter",
+        projectId: "nordskal-beverage",
+        projectName: "Nordskal Canned Cocktails",
+        projectType: "Beverage identity and labels"
       },
       {
         src: "assets/beverage-nordskal-can-lineup.png",
-        alt: "Nordskal beverage label system across eight colorful cans"
+        alt: "Nordskal beverage label system across eight colorful cans",
+        projectId: "nordskal-beverage",
+        projectName: "Nordskal Canned Cocktails",
+        projectType: "Beverage identity and labels"
       }
     ]
   }
@@ -297,6 +393,10 @@ const modalPrevProject = document.querySelector("#modalPrevProject");
 const modalNextProject = document.querySelector("#modalNextProject");
 const modalPrevTitle = document.querySelector("#modalPrevTitle");
 const modalNextTitle = document.querySelector("#modalNextTitle");
+const modalProjectTotal = document.querySelector("#modalProjectTotal");
+const modalProjectIndex = document.querySelector("#modalProjectIndex");
+const modalProjectName = document.querySelector("#modalProjectName");
+const modalProjectImages = document.querySelector("#modalProjectImages");
 const closeTriggers = document.querySelectorAll("[data-close-modal]");
 const focusableCards = document.querySelectorAll(".project-card");
 const projectOrder = Array.from(focusableCards)
@@ -312,6 +412,8 @@ const lightboxNext = document.querySelector("#lightboxNext");
 const lightboxZoomOut = document.querySelector("#lightboxZoomOut");
 const lightboxZoomIn = document.querySelector("#lightboxZoomIn");
 const lightboxZoomLabel = document.querySelector("#lightboxZoomLabel");
+const lightboxFigure = document.querySelector(".lightbox-figure");
+const lightboxPanHint = document.querySelector("#lightboxPanHint");
 const lightboxCloseTriggers = document.querySelectorAll("[data-close-lightbox]");
 const zoomLevels = [1, 1.35, 1.75, 2.25];
 
@@ -325,6 +427,15 @@ let currentProjectKey = null;
 let currentGallery = [];
 let currentImageIndex = 0;
 let lightboxZoomIndex = 0;
+let lightboxPanX = 0;
+let lightboxPanY = 0;
+let lightboxPanPointerId = null;
+let lightboxPanStartX = 0;
+let lightboxPanStartY = 0;
+let lightboxPanOriginX = 0;
+let lightboxPanOriginY = 0;
+let lightboxPanMoved = false;
+let suppressLightboxClick = false;
 
 const focusableSelector = [
   "a[href]",
@@ -521,6 +632,10 @@ function setupReviewDrag() {
   marquee.addEventListener("pointercancel", endDrag);
 }
 
+function getImageAsset(source) {
+  return imageAssets[source] || { src: source, thumbnail: source, full: source };
+}
+
 function renderTools(tools) {
   const toolList = tools.split(",").map((tool) => tool.trim());
 
@@ -531,7 +646,7 @@ function renderTools(tools) {
 
       return `
         <span class="tool-icon" role="img" aria-label="${icon.label}" title="${icon.label}">
-          <img src="${icon.image}" alt="" loading="lazy" decoding="async">
+          <img src="${getImageAsset(icon.image).src}" alt="" loading="lazy" decoding="async">
         </span>
       `;
     })
@@ -542,17 +657,64 @@ function buildGallery(category) {
   const visuals = [
     {
       src: category.image,
-      alt: category.alt
+      alt: category.alt,
+      projectId: category.projectId,
+      projectName: category.projectName,
+      projectType: category.projectType
     },
     ...(category.finalVisuals || [])
   ];
   const seen = new Set();
 
-  return visuals.filter((visual) => {
-    if (!visual.src || seen.has(visual.src)) return false;
-    seen.add(visual.src);
-    return true;
-  });
+  return visuals
+    .filter((visual) => {
+      if (!visual.src || seen.has(visual.src)) return false;
+      seen.add(visual.src);
+      return true;
+    })
+    .map((visual, index) => ({
+      ...visual,
+      projectId: visual.projectId || visual.src,
+      projectName: visual.projectName || `${category.title} Project ${index + 1}`,
+      projectType: visual.projectType || category.title
+    }));
+}
+
+function getGalleryProjectDetails(imageIndex = currentImageIndex) {
+  const visual = currentGallery[imageIndex];
+  if (!visual) return null;
+
+  const projectIds = [...new Set(currentGallery.map((item) => item.projectId))];
+  const projectIndex = projectIds.indexOf(visual.projectId);
+  const projectImages = currentGallery.filter((item) => item.projectId === visual.projectId);
+  const imageInProject = projectImages.findIndex((item) => item.src === visual.src);
+
+  return {
+    visual,
+    projectIds,
+    projectIndex,
+    projectImages,
+    imageInProject
+  };
+}
+
+function updateActiveProjectContext() {
+  const details = getGalleryProjectDetails();
+  if (!details) return;
+
+  const { visual, projectIds, projectIndex, projectImages, imageInProject } = details;
+  const projectCount = projectIds.length;
+  const imageCount = projectImages.length;
+  const projectNumber = String(projectIndex + 1).padStart(2, "0");
+  const totalProjects = String(projectCount).padStart(2, "0");
+
+  modalProjectTotal.textContent = `${projectCount} ${projectCount === 1 ? "project" : "projects"}`;
+  modalProjectIndex.textContent = `Project ${projectNumber} of ${totalProjects}`;
+  modalProjectName.textContent = visual.projectName;
+  modalProjectImages.textContent =
+    imageCount === 1
+      ? `${visual.projectType} · Independent project`
+      : `${visual.projectType} · Image ${imageInProject + 1} of ${imageCount}`;
 }
 
 function updateThumbnailState() {
@@ -570,11 +732,19 @@ function setActiveImage(index, shouldScrollThumbnail = false) {
   const visual = currentGallery[imageIndex];
   currentImageIndex = imageIndex;
 
-  modalImage.src = visual.src;
+  const asset = getImageAsset(visual.src);
+  modalImage.sizes = "(max-width: 820px) calc(100vw - 56px), (max-width: 1100px) 65vw, 50vw";
+  if (asset.srcset) {
+    modalImage.srcset = asset.srcset;
+  } else {
+    modalImage.removeAttribute("srcset");
+  }
+  modalImage.src = asset.src;
   modalImage.alt = visual.alt || "";
-  modalVisualButton.style.setProperty("--modal-preview-image", `url("${visual.src}")`);
-  modalVisualButton.setAttribute("aria-label", `Open image ${imageIndex + 1} fullscreen`);
+  modalVisualButton.style.setProperty("--modal-preview-image", `url("${asset.thumbnail}")`);
+  modalVisualButton.setAttribute("aria-label", `Open ${visual.projectName}, image ${imageIndex + 1}, fullscreen`);
   updateThumbnailState();
+  updateActiveProjectContext();
 
   if (shouldScrollThumbnail) {
     modalThumbnails
@@ -584,19 +754,30 @@ function setActiveImage(index, shouldScrollThumbnail = false) {
 }
 
 function renderThumbnails() {
+  const projectIds = [...new Set(currentGallery.map((visual) => visual.projectId))];
+
   modalThumbnails.innerHTML = currentGallery
     .map(
-      (visual, index) => `
+      (visual, index) => {
+        const projectIndex = projectIds.indexOf(visual.projectId);
+        const projectImages = currentGallery.filter((item) => item.projectId === visual.projectId);
+        const imageInProject = projectImages.findIndex((item) => item.src === visual.src);
+        const startsProject = index > 0 && currentGallery[index - 1].projectId !== visual.projectId;
+
+        return `
         <button
-          class="thumbnail-card"
+          class="thumbnail-card${startsProject ? " starts-project" : ""}"
           type="button"
           data-gallery-index="${index}"
-          aria-label="Show image ${index + 1} of ${currentGallery.length}"
+          aria-label="Show ${visual.projectName}, image ${imageInProject + 1} of ${projectImages.length}"
           aria-current="${index === currentImageIndex ? "true" : "false"}"
+          title="${visual.projectName}"
         >
-          <img src="${visual.src}" alt="" loading="lazy" decoding="async">
+          <img src="${getImageAsset(visual.src).thumbnail}" alt="" loading="lazy" decoding="async">
+          <span class="thumbnail-project-badge">P${String(projectIndex + 1).padStart(2, "0")}</span>
         </button>
-      `
+      `;
+      }
     )
     .join("");
 
@@ -674,15 +855,65 @@ function isLightboxOpen() {
   return lightbox.classList.contains("is-open");
 }
 
+function getLightboxPanBounds() {
+  const zoom = zoomLevels[lightboxZoomIndex];
+  const baseWidth = lightboxImage.offsetWidth;
+  const baseHeight = lightboxImage.offsetHeight;
+  const figureWidth = lightboxFigure.clientWidth;
+  const figureHeight = lightboxFigure.clientHeight;
+
+  return {
+    x: Math.max(0, (baseWidth * zoom - figureWidth) / 2),
+    y: Math.max(0, (baseHeight * zoom - figureHeight) / 2)
+  };
+}
+
+function applyLightboxPan() {
+  lightboxImage.style.setProperty("--lightbox-pan-x", `${lightboxPanX}px`);
+  lightboxImage.style.setProperty("--lightbox-pan-y", `${lightboxPanY}px`);
+}
+
+function clampLightboxPan() {
+  if (lightboxZoomIndex === 0) {
+    lightboxPanX = 0;
+    lightboxPanY = 0;
+    applyLightboxPan();
+    return;
+  }
+
+  const bounds = getLightboxPanBounds();
+  lightboxPanX = Math.max(-bounds.x, Math.min(bounds.x, lightboxPanX));
+  lightboxPanY = Math.max(-bounds.y, Math.min(bounds.y, lightboxPanY));
+  applyLightboxPan();
+}
+
+function moveLightboxPan(deltaX, deltaY) {
+  if (lightboxZoomIndex === 0) return;
+  lightboxPanX += deltaX;
+  lightboxPanY += deltaY;
+  clampLightboxPan();
+}
+
 function setLightboxZoom(index) {
   lightboxZoomIndex = Math.max(0, Math.min(index, zoomLevels.length - 1));
   const zoom = zoomLevels[lightboxZoomIndex];
+
+  if (lightboxZoomIndex === 0) {
+    lightboxPanX = 0;
+    lightboxPanY = 0;
+  }
+
   lightboxImage.style.setProperty("--lightbox-scale", zoom);
   lightboxImage.classList.toggle("is-zoomed", zoom > 1);
   lightboxZoomLabel.textContent = `${Math.round(zoom * 100)}%`;
+  lightboxPanHint.textContent = zoom > 1 ? "Drag to explore" : "Zoom in, then drag to explore";
+  applyLightboxPan();
+  requestAnimationFrame(clampLightboxPan);
 }
 
 function resetLightboxZoom() {
+  lightboxPanX = 0;
+  lightboxPanY = 0;
   setLightboxZoom(0);
 }
 
@@ -691,9 +922,12 @@ function setLightboxImage(index) {
 
   setActiveImage(index, true);
   const visual = currentGallery[currentImageIndex];
-  lightboxImage.src = visual.src;
+  const details = getGalleryProjectDetails();
+  lightboxImage.src = getImageAsset(visual.src).full;
   lightboxImage.alt = visual.alt || "";
-  lightboxCaption.textContent = `${currentImageIndex + 1} / ${currentGallery.length}`;
+  lightboxCaption.textContent = details
+    ? `${visual.projectName} · Image ${details.imageInProject + 1} of ${details.projectImages.length}`
+    : `${currentImageIndex + 1} / ${currentGallery.length}`;
   resetLightboxZoom();
 }
 
@@ -727,6 +961,10 @@ function isContactOpen() {
 function openContactModal() {
   if (!contactModal) return;
 
+  contactModal.querySelectorAll("img[data-src]").forEach((image) => {
+    image.src = image.dataset.src;
+    image.removeAttribute("data-src");
+  });
   contactLastFocusedElement = document.activeElement;
   contactModal.classList.add("is-open");
   contactModal.setAttribute("aria-hidden", "false");
@@ -746,6 +984,53 @@ function closeContactModal() {
   }
 
   contactLastFocusedElement = null;
+}
+
+function startLightboxPan(event) {
+  if (lightboxZoomIndex === 0 || event.button !== 0) return;
+
+  event.preventDefault();
+  lightboxPanPointerId = event.pointerId;
+  lightboxPanStartX = event.clientX;
+  lightboxPanStartY = event.clientY;
+  lightboxPanOriginX = lightboxPanX;
+  lightboxPanOriginY = lightboxPanY;
+  lightboxPanMoved = false;
+  lightboxImage.classList.add("is-panning");
+  lightboxImage.setPointerCapture(event.pointerId);
+}
+
+function updateLightboxPan(event) {
+  if (event.pointerId !== lightboxPanPointerId) return;
+
+  const deltaX = event.clientX - lightboxPanStartX;
+  const deltaY = event.clientY - lightboxPanStartY;
+
+  if (!lightboxPanMoved && Math.hypot(deltaX, deltaY) < 4) return;
+
+  event.preventDefault();
+  lightboxPanMoved = true;
+  lightboxPanX = lightboxPanOriginX + deltaX;
+  lightboxPanY = lightboxPanOriginY + deltaY;
+  clampLightboxPan();
+}
+
+function endLightboxPan(event) {
+  if (event.pointerId !== lightboxPanPointerId) return;
+
+  if (lightboxImage.hasPointerCapture(event.pointerId)) {
+    lightboxImage.releasePointerCapture(event.pointerId);
+  }
+
+  lightboxImage.classList.remove("is-panning");
+  lightboxPanPointerId = null;
+
+  if (lightboxPanMoved) {
+    suppressLightboxClick = true;
+    setTimeout(() => {
+      suppressLightboxClick = false;
+    }, 0);
+  }
 }
 
 focusableCards.forEach((card) => {
@@ -782,9 +1067,25 @@ lightboxPrev.addEventListener("click", () => setLightboxImage(currentImageIndex 
 lightboxNext.addEventListener("click", () => setLightboxImage(currentImageIndex + 1));
 lightboxZoomOut.addEventListener("click", () => setLightboxZoom(lightboxZoomIndex - 1));
 lightboxZoomIn.addEventListener("click", () => setLightboxZoom(lightboxZoomIndex + 1));
+lightboxImage.addEventListener("pointerdown", startLightboxPan);
+lightboxImage.addEventListener("pointermove", updateLightboxPan);
+lightboxImage.addEventListener("pointerup", endLightboxPan);
+lightboxImage.addEventListener("pointercancel", endLightboxPan);
 lightboxImage.addEventListener("click", () => {
+  if (suppressLightboxClick) return;
   setLightboxZoom(lightboxZoomIndex === 0 ? 2 : 0);
 });
+lightboxImage.addEventListener(
+  "wheel",
+  (event) => {
+    if (!isLightboxOpen()) return;
+    event.preventDefault();
+    setLightboxZoom(lightboxZoomIndex + (event.deltaY < 0 ? 1 : -1));
+  },
+  { passive: false }
+);
+lightboxImage.addEventListener("load", clampLightboxPan);
+window.addEventListener("resize", clampLightboxPan);
 
 contactOpenTriggers.forEach((trigger) => {
   trigger.addEventListener("click", openContactModal);
@@ -806,11 +1107,27 @@ document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") closeLightbox();
     if (event.key === "ArrowLeft") {
       event.preventDefault();
-      setLightboxImage(currentImageIndex - 1);
+      if (lightboxZoomIndex > 0) {
+        moveLightboxPan(48, 0);
+      } else {
+        setLightboxImage(currentImageIndex - 1);
+      }
     }
     if (event.key === "ArrowRight") {
       event.preventDefault();
-      setLightboxImage(currentImageIndex + 1);
+      if (lightboxZoomIndex > 0) {
+        moveLightboxPan(-48, 0);
+      } else {
+        setLightboxImage(currentImageIndex + 1);
+      }
+    }
+    if (event.key === "ArrowUp" && lightboxZoomIndex > 0) {
+      event.preventDefault();
+      moveLightboxPan(0, 48);
+    }
+    if (event.key === "ArrowDown" && lightboxZoomIndex > 0) {
+      event.preventDefault();
+      moveLightboxPan(0, -48);
     }
     if (event.key === "+" || event.key === "=") {
       event.preventDefault();
